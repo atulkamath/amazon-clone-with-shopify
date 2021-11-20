@@ -4,7 +4,7 @@
 }
 
 .nav {
-  @apply relative flex items-center justify-between py-2 md:p-2 lg:space-x-4;
+  @apply relative flex items-center justify-between px-4 py-2 md:p-2 lg:space-x-4;
 }
 
 .navMenu {
