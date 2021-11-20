@@ -17,6 +17,8 @@ const navData = [
   'Home',
   'Computers',
   'Books',
+  'Gift Cards',
+  'Sell',
 ]
 interface Link {
   href: string
@@ -73,16 +75,22 @@ const Navbar: FC<NavbarProps> = ({ links }) => (
         )}
         <UserNav />
       </div>
-      <div className="lg:hidden">
+      <div className="px-4 lg:hidden md:px-0">
         <Searchbar />
       </div>
 
-      <div className="flex p-1 py-3 space-x-4 overflow-x-scroll font-semibold text-white list-none lg:p-4 lg:bg-amazon-light-blue whitespace-nowrap">
+      <div className="flex p-1 py-3 space-x-4 overflow-x-scroll font-semibold text-white list-none hide-scroll-bar lg:px-6 lg:p-2 lg:bg-amazon-light-blue whitespace-nowrap">
+        <MenuIcon className="w-6 h-6 text-white" />
         {navData.map((data, id) => (
           <a href="#" key={id}>
             {data}
           </a>
         ))}
+      </div>
+
+      <div className="flex items-center w-full p-2 px-4 text-sm text-white lg:hidden bg-amazon-light-blue">
+        <LocationMarkerIcon className="w-6 h-6 mr-2" />
+        <h2>Deliver To United Arab Emirates</h2>
       </div>
     </Container>
   </NavbarRoot>
