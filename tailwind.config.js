@@ -46,6 +46,9 @@ module.exports = {
         blue: 'var(--blue)',
         green: 'var(--green)',
         red: 'var(--red)',
+        'amazon-dark-blue': '#232f3e',
+        'amazon-light-blue': '#37475A',
+        'amazon-yellow': '#fcbb6a',
       },
       textColor: {
         base: 'var(--text-base)',
