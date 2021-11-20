@@ -1,12 +1,11 @@
-import { FC } from 'react'
+import { Searchbar, UserNav } from '@components/common'
+import { Container, Logo } from '@components/ui'
+import { LocationMarkerIcon } from '@heroicons/react/outline'
+import { MenuIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
+import { FC } from 'react'
 import s from './Navbar.module.css'
 import NavbarRoot from './NavbarRoot'
-import { Logo, Container } from '@components/ui'
-import { Searchbar, UserNav } from '@components/common'
-import Image from 'next/image'
-import { MenuIcon } from '@heroicons/react/solid'
-import { LocationMarkerIcon } from '@heroicons/react/outline'
 
 const navData = [
   'Todays Deals',
