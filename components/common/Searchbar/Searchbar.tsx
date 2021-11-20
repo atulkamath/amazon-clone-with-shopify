@@ -33,14 +33,14 @@ const Searchbar: FC<Props> = ({ className, id = 'search' }) => {
   }
 
   return (
-    <div className={cn(s.root, className)}>
+    <div className={cn(s.root, className, 'rounded-lg mr-4')}>
       <label className="hidden" htmlFor={id}>
         Search
       </label>
       <input
         id={id}
         className={s.input}
-        placeholder="Search for products..."
+        placeholder="Search Amazon.ae"
         defaultValue={router.query.q}
         onKeyUp={handleKeyUp}
       />

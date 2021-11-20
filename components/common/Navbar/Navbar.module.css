@@ -1,10 +1,10 @@
 .root {
-  @apply sticky top-0 bg-primary z-40 transition-all duration-150;
+  @apply sticky top-0 z-40 transition-all duration-150 bg-amazon-dark-blue;
   min-height: 74px;
 }
 
 .nav {
-  @apply relative flex flex-row justify-between py-4 md:py-4;
+  @apply relative flex items-center justify-between py-2 md:p-2 lg:space-x-4;
 }
 
 .navMenu {
@@ -12,9 +12,7 @@
 }
 
 .link {
-  @apply inline-flex items-center leading-6
-  transition ease-in-out duration-75 cursor-pointer
-  text-accent-5;
+  @apply inline-flex items-center leading-6 transition duration-75 ease-in-out cursor-pointer text-accent-5;
 }
 
 .link:hover {
@@ -26,7 +24,7 @@
 }
 
 .logo {
-  @apply cursor-pointer rounded-full border transform duration-100 ease-in-out;
+  @apply duration-100 ease-in-out transform border rounded-full cursor-pointer;
 
   &:hover {
     @apply shadow-md;

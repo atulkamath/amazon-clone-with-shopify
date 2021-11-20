@@ -26,23 +26,6 @@ const UserNav: FC<Props> = ({ className }) => {
   return (
     <nav className={cn(s.root, className)}>
       <ul className={s.list}>
-        {process.env.COMMERCE_CART_ENABLED && (
-          <li className={s.item}>
-            <Button className={s.item} variant="naked" onClick={toggleSidebar} aria-label="Cart">
-              <Bag />
-              {itemsCount > 0 && <span className={s.bagCount}>{itemsCount}</span>}
-            </Button>
-          </li>
-        )}
-        {process.env.COMMERCE_WISHLIST_ENABLED && (
-          <li className={s.item}>
-            <Link href="/wishlist">
-              <a onClick={closeSidebarIfPresent} aria-label="Wishlist">
-                <Heart />
-              </a>
-            </Link>
-          </li>
-        )}
         {process.env.COMMERCE_CUSTOMERAUTH_ENABLED && (
           <li className={s.item}>
             {customer ? (
@@ -53,9 +36,47 @@ const UserNav: FC<Props> = ({ className }) => {
                 aria-label="Menu"
                 onClick={() => openModal()}
               >
+                <h3 className="text-white lg:hidden">Sign In</h3>
+                <div className="flex-col items-start hidden text-white lg:flex">
+                  <h3>Hello Sign In</h3>
+                  <h3 className="font-bold">Accounts and Lists</h3>
+                </div>
+                <a
+                  className="flex-col items-start justify-center hidden ml-6 text-white lg:flex"
+                  href="#"
+                >
+                  <h3>Returns</h3>
+                  <h3 className="font-bold">& Orders</h3>
+                </a>
                 <Avatar />
               </button>
             )}
+          </li>
+        )}
+
+        {process.env.COMMERCE_CART_ENABLED && (
+          <li className={s.item}>
+            <Button
+              className={s.item}
+              variant="naked"
+              onClick={toggleSidebar}
+              aria-label="Cart"
+            >
+              <Bag />
+              {itemsCount > 0 && (
+                <span className={s.bagCount}>{itemsCount}</span>
+              )}
+              <h3 className="hidden text-xs text-white lg:block">Cart</h3>
+            </Button>
+          </li>
+        )}
+        {process.env.COMMERCE_WISHLIST_ENABLED && (
+          <li className={s.item}>
+            <Link href="/wishlist">
+              <a onClick={closeSidebarIfPresent} aria-label="Wishlist">
+                <Heart />
+              </a>
+            </Link>
           </li>
         )}
       </ul>
