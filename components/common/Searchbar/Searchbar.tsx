@@ -33,7 +33,7 @@ const Searchbar: FC<Props> = ({ className, id = 'search' }) => {
   }
 
   return (
-    <div className={cn(s.root, className, 'rounded-lg')}>
+    <div className={cn(s.root, className, 'rounded-lg mr-4')}>
       <label className="hidden" htmlFor={id}>
         Search
       </label>

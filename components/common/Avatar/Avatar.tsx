@@ -12,7 +12,8 @@ const Avatar: FC<Props> = ({}) => {
   let { userAvatar } = useUserAvatar()
 
   return (
-    <UserIcon className="w-8 h-6 text-white" />
+    <UserIcon className="w-8 h-6 text-white lg:hidden" />
+
     // <div
     //   ref={ref}
     //   style={{ backgroundImage: userAvatar }}
