@@ -1,7 +1,8 @@
-import commerce from '@lib/api/commerce'
 import { Layout } from '@components/common'
 import { ProductCard } from '@components/product'
-import { Grid, Marquee, Hero } from '@components/ui'
+import RoundCarousel from '@components/round-carousel'
+import { Grid, Hero, Marquee } from '@components/ui'
+import commerce from '@lib/api/commerce'
 // import HomeAllProductsGrid from '@components/common/HomeAllProductsGrid'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 
@@ -40,6 +41,7 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
+      <RoundCarousel />
       <Grid variant="filled">
         {products.slice(0, 3).map((product: any, i: number) => (
           <ProductCard
@@ -51,7 +53,6 @@ export default function Home({
             }}
           />
         ))}
-        <h1>Hello</h1>
       </Grid>
       <Marquee variant="secondary">
         {products.slice(0, 3).map((product: any, i: number) => (
