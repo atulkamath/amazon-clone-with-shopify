@@ -13,6 +13,7 @@ const isVendure = provider === 'vendure'
 
 module.exports = withCommerceConfig({
   commerce,
+  images: { domains: ['m.media-amazon.com'] },
   i18n: {
     locales: ['en-US', 'es'],
     defaultLocale: 'en-US',
