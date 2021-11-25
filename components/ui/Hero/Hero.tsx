@@ -3,12 +3,7 @@ import TileCarousel from '@components/tile-carousel'
 import Image from 'next/image'
 import React, { FC, useEffect, useState } from 'react'
 
-interface HeroProps {
-  className?: string
-  headline: string
-  description: string
-  data: object
-}
+interface HeroProps {}
 
 const smallImage = [
   'https://m.media-amazon.com/images/I/71Fia1VO1PL._SR1236,1080_.jpg',
