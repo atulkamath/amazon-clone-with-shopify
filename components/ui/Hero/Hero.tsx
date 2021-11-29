@@ -39,7 +39,7 @@ const Hero: FC<HeroProps> = () => {
         />
       </div>
       <TileCarousel />
-      <section className="lg:hidden">
+      <section className="-mb-4 lg:hidden">
         <Image
           width={'100vw'}
           height={20}

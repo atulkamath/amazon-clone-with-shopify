@@ -14,6 +14,7 @@ interface Props {
   noNameTag?: boolean
   imgProps?: Omit<ImageProps, 'src' | 'layout' | 'placeholder' | 'blurDataURL'>
   variant?: 'default' | 'slim' | 'simple'
+  title?: string
 }
 
 const placeholderImg = '/product-img-placeholder.svg'
@@ -24,6 +25,7 @@ const ProductCard: FC<Props> = ({
   className,
   noNameTag = false,
   variant = 'default',
+  title,
 }) => {
   const { price } = usePrice({
     amount: product.price.value,
@@ -43,6 +45,7 @@ const ProductCard: FC<Props> = ({
         {variant === 'slim' && (
           <>
             <div className={s.header}>
+              <h1 className="text-3xl">{title}</h1>
               <span>{product.name}</span>
             </div>
             {product?.images && (
@@ -51,11 +54,13 @@ const ProductCard: FC<Props> = ({
                   quality="85"
                   src={product.images[0]?.url || placeholderImg}
                   alt={product.name || 'Product Image'}
-                  height={320}
-                  width={320}
+                  height={150}
+                  width={150}
                   layout="fixed"
+                  objectFit="contain"
                   {...imgProps}
                 />
+                {/* <h2>{product.name}</h2> */}
               </div>
             )}
           </>
@@ -108,23 +113,26 @@ const ProductCard: FC<Props> = ({
                 variant={product.variants[0] as any}
               />
             )}
-            <ProductTag
-              name={product.name}
-              price={`${price} ${product.price?.currencyCode}`}
-            />
+
             <div className={s.imageContainer}>
               {product?.images && (
-                <div>
+                <div className="flex flex-col items-center justify-center">
                   <Image
                     alt={product.name || 'Product Image'}
                     className={s.productImage}
                     src={product.images[0]?.url || placeholderImg}
-                    height={540}
-                    width={540}
+                    height={220}
+                    width={220}
                     quality="85"
-                    layout="responsive"
+                    layout="fixed"
+                    objectFit="contain"
                     {...imgProps}
                   />
+                  <ProductTag
+                    name={product.name}
+                    price={`${price} ${product.price?.currencyCode}`}
+                  />
+                  {/* <h2>{`${price} ${product.price?.currencyCode}`}</h2> */}
                 </div>
               )}
             </div>
