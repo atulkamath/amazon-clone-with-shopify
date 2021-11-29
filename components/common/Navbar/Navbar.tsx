@@ -82,11 +82,11 @@ const Navbar: FC<NavbarProps> = ({ links }) => (
         )}
         <UserNav />
       </div>
-      <div className="px-4 lg:hidden md:px-0">
+      <div className="px-5 lg:hidden md:px-0">
         <Searchbar />
       </div>
 
-      <div className="flex p-1 py-3 space-x-4 overflow-x-scroll font-semibold text-white list-none hide-scroll-bar lg:px-6 lg:p-2 lg:bg-amazon-light-blue whitespace-nowrap">
+      <div className="flex p-5 py-3 space-x-4 overflow-x-scroll font-semibold text-white list-none hide-scroll-bar lg:px-6 lg:p-2 lg:bg-amazon-light-blue whitespace-nowrap">
         {/* <Menu /> */}
         {navData.map((data, id) => (
           <a href="#" key={id}>
@@ -95,7 +95,7 @@ const Navbar: FC<NavbarProps> = ({ links }) => (
         ))}
       </div>
 
-      <div className="flex items-center w-full p-2 px-4 text-sm text-white lg:hidden bg-amazon-light-blue">
+      <div className="flex items-center w-full p-2 px-5 text-sm text-white lg:hidden bg-amazon-light-blue">
         <LocationMarkerIcon className="w-6 h-6 mr-2" />
         <h2>Deliver To United Arab Emirates</h2>
       </div>
