@@ -1,6 +1,7 @@
 import { Layout } from '@components/common'
 import { ProductCard } from '@components/product'
 import RoundCarousel from '@components/round-carousel'
+import TileCarousel from '@components/tile-carousel'
 import { Grid, Hero, Marquee } from '@components/ui'
 import commerce from '@lib/api/commerce'
 // import HomeAllProductsGrid from '@components/common/HomeAllProductsGrid'
@@ -13,18 +14,18 @@ export async function getStaticProps({
 }: GetStaticPropsContext) {
   const config = { locale, locales }
   const productsPromise = commerce.getAllProducts({
-    variables: { first: 6 },
+    variables: { first: 20 },
     config,
     preview,
-    // Saleor provider only
+    // Sale or provider only
     ...({ featured: true } as any),
   })
+
   const pagesPromise = commerce.getAllPages({ config, preview })
   const siteInfoPromise = commerce.getSiteInfo({ config, preview })
   const { products } = await productsPromise
   const { pages } = await pagesPromise
   const { categories, brands } = await siteInfoPromise
-
   return {
     props: {
       products,
@@ -38,50 +39,75 @@ export async function getStaticProps({
 
 export default function Home({
   products,
+  categories,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <RoundCarousel />
+
       <Hero />
-      <Grid variant="filled">
-        {products.slice(0, 3).map((product: any, i: number) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            imgProps={{
-              width: i === 0 ? 1080 : 540,
-              height: i === 0 ? 1080 : 540,
-            }}
-          />
+      <h1 className="px-4 pt-4 text-2xl border-t-4 border-gray-300 bg-accent-2">
+        {' '}
+        White Friday Deals
+      </h1>
+      <Grid className="flex p-4 -ml-4 overflow-x-scroll bg-accent-2 hide-scroll-bar ">
+        {products.map((product: any, _i: number) => (
+          <ProductCard key={product.id} product={product} />
         ))}
       </Grid>
-      <Marquee variant="secondary">
-        {products.slice(0, 3).map((product: any, i: number) => (
-          <ProductCard key={product.id} product={product} variant="slim" />
-        ))}
-      </Marquee>
-      <Grid layout="B" variant="filled">
-        {products.slice(0, 3).map((product: any, i: number) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            imgProps={{
-              width: i === 0 ? 1080 : 540,
-              height: i === 0 ? 1080 : 540,
-            }}
-          />
+      <Grid
+        variant="filled"
+        className="grid grid-cols-2 lg:hidden hide-scroll-bar"
+        title="Deals on t-shirts!"
+      >
+        {products.slice(0, 4).map((product: any, _i: number) => (
+          <ProductCard variant="slim" key={product.id} product={product} />
         ))}
       </Grid>
-      <Marquee>
-        {products.slice(3).map((product: any, i: number) => (
-          <ProductCard key={product.id} product={product} variant="slim" />
+      <Grid
+        variant="filled"
+        className="grid grid-cols-2 lg:hidden hide-scroll-bar"
+        title="Deals on electronics!"
+      >
+        {products.slice(4, 8).map((product: any, _i: number) => (
+          <ProductCard variant="slim" key={product.id} product={product} />
         ))}
-      </Marquee>
-      {/* <HomeAllProductsGrid
+      </Grid>
+
+      <Grid className="hidden grid-cols-4 bg-accent-2 lg:grid">
+        <Grid
+          variant="filled"
+          className="items-center justify-center hidden grid-cols-2 gap-4 bg-white lg:grid hide-scroll-bar"
+        >
+          {products.slice(0, 4).map((product: any, _i: number) => (
+            <ProductCard variant="slim" key={product.id} product={product} />
+          ))}
+        </Grid>
+        <Grid
+          variant="filled"
+          className="items-center justify-center hidden grid-cols-2 gap-4 bg-white lg:grid hide-scroll-bar "
+        >
+          {products.slice(4, 8).map((product: any, _i: number) => (
+            <ProductCard variant="slim" key={product.id} product={product} />
+          ))}
+        </Grid>
+      </Grid>
+
+      <h1 className="px-4 pt-4 text-xl bg-accent-2 whitespace-nowrap">
+        Last chance deals | Up to 40% off
+      </h1>
+      <Grid className="flex p-4 -ml-4 overflow-x-scroll border-none bg-accent-2 hide-scroll-bar ">
+        {products.slice(8, 13).map((product: any, _i: number) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </Grid>
+      {/* </Grid> 
+       <HomeAllProductsGrid
         newestProducts={products}
         categories={categories}
         brands={brands}
-      /> */}
+      />
+      */}
     </>
   )
 }

@@ -7,6 +7,7 @@ interface GridProps {
   children?: ReactNode[] | Component[] | any[]
   layout?: 'A' | 'B' | 'C' | 'D' | 'normal'
   variant?: 'default' | 'filled'
+  title?: string
 }
 
 const Grid: FC<GridProps> = ({
@@ -14,6 +15,7 @@ const Grid: FC<GridProps> = ({
   layout = 'A',
   children,
   variant = 'default',
+  title,
 }) => {
   const rootClassName = cn(
     s.root,
@@ -28,7 +30,12 @@ const Grid: FC<GridProps> = ({
     },
     className
   )
-  return <div className={rootClassName}>{children}</div>
+  return (
+    <div className={rootClassName}>
+      <h1 className="text-xl bg-white col-span-full">{title}</h1>
+      {children}
+    </div>
+  )
 }
 
 export default Grid

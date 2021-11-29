@@ -3,9 +3,10 @@ import { Container, Logo } from '@components/ui'
 import { LocationMarkerIcon } from '@heroicons/react/outline'
 import { MenuIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import s from './Navbar.module.css'
 import NavbarRoot from './NavbarRoot'
+import Menu from '@components/menu'
 
 const navData = [
   'Todays Deals',
@@ -20,6 +21,7 @@ const navData = [
   'Gift Cards',
   'Sell',
 ]
+
 interface Link {
   href: string
   label: string
@@ -27,12 +29,17 @@ interface Link {
 interface NavbarProps {
   links?: Link[]
 }
-
+let toggleMenu = () => {}
 const Navbar: FC<NavbarProps> = ({ links }) => (
+  //const [menu, setMenu] = useState('');
   <NavbarRoot>
     <Container>
+      <Menu />
       <div className={s.nav}>
-        <MenuIcon className="w-8 h-8 text-white lg:mr-2 lg:hidden" />
+        <MenuIcon
+          onClick={toggleMenu}
+          className="w-8 h-8 text-white lg:mr-2 lg:hidden"
+        />
         <Link href="/">
           {/* className={s.logo} */}
           <a className="pt-2" aria-label="Logo">
@@ -80,7 +87,7 @@ const Navbar: FC<NavbarProps> = ({ links }) => (
       </div>
 
       <div className="flex p-1 py-3 space-x-4 overflow-x-scroll font-semibold text-white list-none hide-scroll-bar lg:px-6 lg:p-2 lg:bg-amazon-light-blue whitespace-nowrap">
-        <MenuIcon className="w-6 h-6 text-white" />
+        {/* <Menu /> */}
         {navData.map((data, id) => (
           <a href="#" key={id}>
             {data}
