@@ -7,6 +7,7 @@ interface GridProps {
   children?: ReactNode[] | Component[] | any[]
   layout?: 'A' | 'B' | 'C' | 'D' | 'normal'
   variant?: 'default' | 'filled'
+  title?: string
 }
 
 const Grid: FC<GridProps> = ({
@@ -14,6 +15,7 @@ const Grid: FC<GridProps> = ({
   layout = 'A',
   children,
   variant = 'default',
+  title,
 }) => {
   const rootClassName = cn(
     s.root,

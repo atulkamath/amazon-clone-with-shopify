@@ -1,69 +1,11 @@
-.root {
-  /* @apply relative flex flex-row items-center w-full min-w-full py-0 overflow-hidden; */
-  @apply box-border relative inline-block w-full max-h-full overflow-hidden transition-transform ease-linear bg-center bg-no-repeat bg-cover cursor-pointer bg-accent-1;
-  height: 100% !important;
-}
-
 .root:hover {
   & .productImage {
     transform: scale(1.2625);
   }
-
-  & .header .name span,
-  & .header .price,
-  & .wishlistButton {
-    @apply bg-secondary text-secondary;
-  }
-
-  &:nth-child(6n + 1) .header .name span,
-  &:nth-child(6n + 1) .header .price,
-  &:nth-child(6n + 1) .wishlistButton {
-    @apply text-white bg-violet;
-  }
-
-  &:nth-child(6n + 5) .header .name span,
-  &:nth-child(6n + 5) .header .price,
-  &:nth-child(6n + 5) .wishlistButton {
-    @apply text-white bg-blue;
-  }
-
-  &:nth-child(6n + 3) .header .name span,
-  &:nth-child(6n + 3) .header .price,
-  &:nth-child(6n + 3) .wishlistButton {
-    @apply text-white bg-pink;
-  }
-
-  &:nth-child(6n + 6) .header .name span,
-  &:nth-child(6n + 6) .header .price,
-  &:nth-child(6n + 6) .wishlistButton {
-    @apply text-white bg-cyan;
-  }
-}
-
-.header {
-  @apply absolute top-0 left-0 z-20 pr-16 transition-colors duration-500 ease-in-out;
-}
-
-.header .name {
-  @apply w-full max-w-full pt-0 transition-colors duration-500 ease-in-out leading-extra-loose;
-  font-size: 2rem;
-  letter-spacing: 0.4px;
-}
-
-.header .name span {
-  @apply px-6 py-4 font-bold transition-colors duration-500 ease-in-out bg-primary text-primary;
-  font-size: inherit;
-  letter-spacing: inherit;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-}
-
-.header .price {
-  @apply inline-block px-6 pt-2 pb-4 text-sm font-semibold tracking-wide transition-colors duration-500 ease-in-out bg-primary text-accent-9;
 }
 
 .imageContainer {
-  @apply flex items-center justify-center overflow-hidden;
+  @apply flex items-center justify-center overflow-hidden bg-white;
 }
 
 .imageContainer > div {
@@ -71,7 +13,7 @@
 }
 
 .imageContainer .productImage {
-  @apply object-cover transition-transform duration-500 transform scale-120;
+  @apply object-contain transition-transform duration-500;
 }
 
 .root .wishlistButton {
@@ -89,15 +31,11 @@
 
 /* Variant Slim */
 .slim {
-  @apply box-border relative overflow-hidden bg-transparent;
+  @apply flex flex-col items-center justify-center w-full overflow-hidden bg-transparent whitespace-nowrap;
 }
 
 .slim .header {
-  @apply absolute inset-0 z-20 flex items-center justify-end mr-8;
-}
-
-.slim span {
-  @apply inline-block p-3 text-xl font-bold break-words bg-accent-9 text-accent-0;
+  @apply flex items-center justify-center w-3/4 font-bold text-white whitespace-nowrap bg-amazon-dark-blue;
 }
 
 .root:global(.secondary) .header span {

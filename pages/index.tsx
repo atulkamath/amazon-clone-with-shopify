@@ -1,6 +1,7 @@
 import { Layout } from '@components/common'
 import { ProductCard } from '@components/product'
 import RoundCarousel from '@components/round-carousel'
+import TileCarousel from '@components/tile-carousel'
 import { Grid, Hero, Marquee } from '@components/ui'
 import commerce from '@lib/api/commerce'
 // import HomeAllProductsGrid from '@components/common/HomeAllProductsGrid'
@@ -16,7 +17,7 @@ export async function getStaticProps({
     variables: { first: 6 },
     config,
     preview,
-    // Saleor provider only
+    // Sale or provider only
     ...({ featured: true } as any),
   })
   const pagesPromise = commerce.getAllPages({ config, preview })
@@ -43,40 +44,48 @@ export default function Home({
     <>
       <RoundCarousel />
       <Hero />
-      <Grid variant="filled">
-        {products.slice(0, 3).map((product: any, i: number) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            imgProps={{
-              width: i === 0 ? 1080 : 540,
-              height: i === 0 ? 1080 : 540,
-            }}
-          />
+      <h1 className="px-4 pt-4 text-2xl bg-accent-2"> White Friday Deals</h1>
+      <Grid className="flex p-4 space-x-8 overflow-x-scroll border-none bg-accent-2 hide-scroll-bar ">
+        {products.map((product: any, _i: number) => (
+          <ProductCard key={product.id} product={product} />
         ))}
       </Grid>
-      <Marquee variant="secondary">
-        {products.slice(0, 3).map((product: any, i: number) => (
-          <ProductCard key={product.id} product={product} variant="slim" />
-        ))}
-      </Marquee>
-      <Grid layout="B" variant="filled">
-        {products.slice(0, 3).map((product: any, i: number) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            imgProps={{
-              width: i === 0 ? 1080 : 540,
-              height: i === 0 ? 1080 : 540,
-            }}
-          />
+      <Grid
+        variant="filled"
+        className="grid grid-cols-2 lg:hidden hide-scroll-bar"
+      >
+        {products.slice(1, 5).map((product: any, _i: number) => (
+          <ProductCard variant="slim" key={product.id} product={product} />
         ))}
       </Grid>
-      <Marquee>
-        {products.slice(3).map((product: any, i: number) => (
-          <ProductCard key={product.id} product={product} variant="slim" />
+      <Grid
+        variant="filled"
+        className="grid grid-cols-2 lg:hidden hide-scroll-bar"
+      >
+        {products.slice(1, 5).map((product: any, _i: number) => (
+          <ProductCard variant="slim" key={product.id} product={product} />
         ))}
-      </Marquee>
+      </Grid>
+      <Grid className="grid-cols-4 lg:grid">
+        <Grid
+          variant="filled"
+          className="items-center justify-center hidden grid-cols-2 gap-4 border-none lg:grid hide-scroll-bar"
+        >
+          {products.slice(0, 4).map((product: any, _i: number) => (
+            <ProductCard variant="slim" key={product.id} product={product} />
+          ))}
+        </Grid>
+        <Grid
+          variant="filled"
+          className="items-center justify-center hidden grid-cols-2 gap-4 border-none lg:grid hide-scroll-bar"
+        >
+          {products.slice(2, 6).map((product: any, _i: number) => (
+            <ProductCard variant="slim" key={product.id} product={product} />
+          ))}
+        </Grid>
+      </Grid>
+
+      {/* </Grid> */}
       {/* <HomeAllProductsGrid
         newestProducts={products}
         categories={categories}
