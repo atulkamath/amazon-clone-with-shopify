@@ -5,7 +5,7 @@
 }
 
 .imageContainer {
-  @apply flex items-center justify-center overflow-hidden bg-white;
+  @apply flex items-center justify-center overflow-hidden bg-white whitespace-nowrap;
 }
 
 .imageContainer > div {

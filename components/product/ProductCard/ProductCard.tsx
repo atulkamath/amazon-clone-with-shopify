@@ -116,7 +116,7 @@ const ProductCard: FC<Props> = ({
 
             <div className={s.imageContainer}>
               {product?.images && (
-                <div>
+                <div className="flex flex-col items-center justify-center">
                   <Image
                     alt={product.name || 'Product Image'}
                     className={s.productImage}

@@ -55,7 +55,6 @@ export default function Home({
           <ProductCard key={product.id} product={product} />
         ))}
       </Grid>
-
       <Grid
         variant="filled"
         className="grid grid-cols-2 lg:hidden hide-scroll-bar"
@@ -75,10 +74,10 @@ export default function Home({
         ))}
       </Grid>
 
-      <Grid className="hidden grid-cols-4 lg:grid">
+      <Grid className="hidden grid-cols-4 bg-accent-2 lg:grid">
         <Grid
           variant="filled"
-          className="items-center justify-center hidden grid-cols-2 gap-4 lg:grid hide-scroll-bar"
+          className="items-center justify-center hidden grid-cols-2 gap-4 bg-white lg:grid hide-scroll-bar"
         >
           {products.slice(0, 4).map((product: any, _i: number) => (
             <ProductCard variant="slim" key={product.id} product={product} />
@@ -86,7 +85,7 @@ export default function Home({
         </Grid>
         <Grid
           variant="filled"
-          className="items-center justify-center hidden grid-cols-2 gap-4 lg:grid hide-scroll-bar "
+          className="items-center justify-center hidden grid-cols-2 gap-4 bg-white lg:grid hide-scroll-bar "
         >
           {products.slice(4, 8).map((product: any, _i: number) => (
             <ProductCard variant="slim" key={product.id} product={product} />
