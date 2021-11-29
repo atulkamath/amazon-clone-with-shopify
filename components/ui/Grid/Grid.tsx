@@ -30,7 +30,12 @@ const Grid: FC<GridProps> = ({
     },
     className
   )
-  return <div className={rootClassName}>{children}</div>
+  return (
+    <div className={rootClassName}>
+      <h1 className="text-xl bg-white col-span-full">{title}</h1>
+      {children}
+    </div>
+  )
 }
 
 export default Grid

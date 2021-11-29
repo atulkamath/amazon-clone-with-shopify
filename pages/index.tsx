@@ -14,7 +14,7 @@ export async function getStaticProps({
 }: GetStaticPropsContext) {
   const config = { locale, locales }
   const productsPromise = commerce.getAllProducts({
-    variables: { first: 6 },
+    variables: { first: 20 },
     config,
     preview,
     // Sale or provider only
@@ -25,7 +25,6 @@ export async function getStaticProps({
   const { products } = await productsPromise
   const { pages } = await pagesPromise
   const { categories, brands } = await siteInfoPromise
-
   return {
     props: {
       products,
@@ -43,29 +42,34 @@ export default function Home({
   return (
     <>
       <RoundCarousel />
+      {console.log(products)}
       <Hero />
       <h1 className="px-4 pt-4 text-2xl bg-accent-2"> White Friday Deals</h1>
-      <Grid className="flex p-4 space-x-8 overflow-x-scroll border-none bg-accent-2 hide-scroll-bar ">
+      <Grid className="flex p-4 overflow-x-scroll border-none bg-accent-2 hide-scroll-bar ">
         {products.map((product: any, _i: number) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </Grid>
+
       <Grid
         variant="filled"
         className="grid grid-cols-2 lg:hidden hide-scroll-bar"
+        title="Deals on t-shirts!"
       >
-        {products.slice(1, 5).map((product: any, _i: number) => (
+        {products.slice(0, 4).map((product: any, _i: number) => (
           <ProductCard variant="slim" key={product.id} product={product} />
         ))}
       </Grid>
       <Grid
         variant="filled"
         className="grid grid-cols-2 lg:hidden hide-scroll-bar"
+        title="Deals on electronics!"
       >
-        {products.slice(1, 5).map((product: any, _i: number) => (
+        {products.slice(4, 9).map((product: any, _i: number) => (
           <ProductCard variant="slim" key={product.id} product={product} />
         ))}
       </Grid>
+
       <Grid className="grid-cols-4 lg:grid">
         <Grid
           variant="filled"
@@ -79,18 +83,19 @@ export default function Home({
           variant="filled"
           className="items-center justify-center hidden grid-cols-2 gap-4 border-none lg:grid hide-scroll-bar"
         >
-          {products.slice(2, 6).map((product: any, _i: number) => (
+          {products.slice(4, 9).map((product: any, _i: number) => (
             <ProductCard variant="slim" key={product.id} product={product} />
           ))}
         </Grid>
       </Grid>
 
-      {/* </Grid> */}
-      {/* <HomeAllProductsGrid
+      {/* </Grid> 
+       <HomeAllProductsGrid
         newestProducts={products}
         categories={categories}
         brands={brands}
-      /> */}
+      />
+      */}
     </>
   )
 }

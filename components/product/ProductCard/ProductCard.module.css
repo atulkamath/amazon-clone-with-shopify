@@ -13,7 +13,7 @@
 }
 
 .imageContainer .productImage {
-  @apply object-contain transition-transform duration-500;
+  @apply transition-transform duration-500;
 }
 
 .root .wishlistButton {

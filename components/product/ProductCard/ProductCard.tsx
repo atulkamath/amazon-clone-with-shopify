@@ -57,6 +57,7 @@ const ProductCard: FC<Props> = ({
                   height={150}
                   width={150}
                   layout="fixed"
+                  objectFit="contain"
                   {...imgProps}
                 />
               </div>

@@ -7,7 +7,7 @@
 
   &.filled {
     & > *:nth-child(6n + 1) {
-      @apply bg-amazon-orange;
+      @apply bg-transparent;
     }
 
     & > *:nth-child(6n + 2) {
@@ -19,6 +19,12 @@
     }
 
     & > *:nth-child(6n + 4) {
+      @apply bg-amazon-orange;
+    }
+    & > *:nth-child(6n + 5) {
+      @apply bg-amazon-orange;
+    }
+    & > *:nth-child(6n + 6) {
       @apply bg-amazon-orange;
     }
   }
