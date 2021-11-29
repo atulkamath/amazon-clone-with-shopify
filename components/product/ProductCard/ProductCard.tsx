@@ -60,6 +60,7 @@ const ProductCard: FC<Props> = ({
                   objectFit="contain"
                   {...imgProps}
                 />
+                {/* <h2>{product.name}</h2> */}
               </div>
             )}
           </>

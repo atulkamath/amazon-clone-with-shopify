@@ -18,7 +18,7 @@ const ProductTag: React.FC<ProductTagProps> = ({
   return (
     <div className={cn(s.root, className)}>
       <div className="mb-1">{price}</div>
-      <h3>
+      <h3 className="whitespace-nowrap">
         <span
           style={{
             fontSize: `${fontSize}px`,

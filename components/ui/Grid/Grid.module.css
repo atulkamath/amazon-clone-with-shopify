@@ -1,5 +1,5 @@
 .root {
-  @apply gap-4 border-t-2 border-b-2 border-gray-400;
+  @apply gap-3 border-b-4 border-gray-300;
 }
 
 .layoutA {

@@ -20,6 +20,7 @@ export async function getStaticProps({
     // Sale or provider only
     ...({ featured: true } as any),
   })
+
   const pagesPromise = commerce.getAllPages({ config, preview })
   const siteInfoPromise = commerce.getSiteInfo({ config, preview })
   const { products } = await productsPromise
@@ -38,14 +39,18 @@ export async function getStaticProps({
 
 export default function Home({
   products,
+  categories,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <RoundCarousel />
-      {console.log(products)}
+
       <Hero />
-      <h1 className="px-4 pt-4 text-2xl bg-accent-2"> White Friday Deals</h1>
-      <Grid className="flex p-4 overflow-x-scroll border-none bg-accent-2 hide-scroll-bar ">
+      <h1 className="px-4 pt-4 text-2xl border-t-4 border-gray-300 bg-accent-2">
+        {' '}
+        White Friday Deals
+      </h1>
+      <Grid className="flex p-4 -ml-4 overflow-x-scroll bg-accent-2 hide-scroll-bar ">
         {products.map((product: any, _i: number) => (
           <ProductCard key={product.id} product={product} />
         ))}
@@ -65,15 +70,15 @@ export default function Home({
         className="grid grid-cols-2 lg:hidden hide-scroll-bar"
         title="Deals on electronics!"
       >
-        {products.slice(4, 9).map((product: any, _i: number) => (
+        {products.slice(4, 8).map((product: any, _i: number) => (
           <ProductCard variant="slim" key={product.id} product={product} />
         ))}
       </Grid>
 
-      <Grid className="grid-cols-4 lg:grid">
+      <Grid className="hidden grid-cols-4 lg:grid">
         <Grid
           variant="filled"
-          className="items-center justify-center hidden grid-cols-2 gap-4 border-none lg:grid hide-scroll-bar"
+          className="items-center justify-center hidden grid-cols-2 gap-4 lg:grid hide-scroll-bar"
         >
           {products.slice(0, 4).map((product: any, _i: number) => (
             <ProductCard variant="slim" key={product.id} product={product} />
@@ -81,14 +86,22 @@ export default function Home({
         </Grid>
         <Grid
           variant="filled"
-          className="items-center justify-center hidden grid-cols-2 gap-4 border-none lg:grid hide-scroll-bar"
+          className="items-center justify-center hidden grid-cols-2 gap-4 lg:grid hide-scroll-bar "
         >
-          {products.slice(4, 9).map((product: any, _i: number) => (
+          {products.slice(4, 8).map((product: any, _i: number) => (
             <ProductCard variant="slim" key={product.id} product={product} />
           ))}
         </Grid>
       </Grid>
 
+      <h1 className="px-4 pt-4 text-xl bg-accent-2 whitespace-nowrap">
+        Last chance deals | Up to 40% off
+      </h1>
+      <Grid className="flex p-4 -ml-4 overflow-x-scroll border-none bg-accent-2 hide-scroll-bar ">
+        {products.slice(8, 13).map((product: any, _i: number) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </Grid>
       {/* </Grid> 
        <HomeAllProductsGrid
         newestProducts={products}
