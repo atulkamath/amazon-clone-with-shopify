@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useRef } from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -20,6 +20,42 @@ const links = [
     name: 'Home',
     url: '/',
   },
+  {
+    name: 'Your Orders',
+    url: '/',
+  },
+  {
+    name: 'Your Subscribe & Save',
+    url: '/',
+  },
+  {
+    name: 'Your Addresses',
+    url: '/',
+  },
+  {
+    name: 'Your Account',
+    url: '/',
+  },
+  {
+    name: 'Your Lists',
+    url: '/',
+  },
+  {
+    name: 'Your Orders',
+    url: '/',
+  },
+  {
+    name: 'Your Amazon.ae',
+    url: '/',
+  },
+  {
+    name: 'Help',
+    url: '/',
+  },
+  {
+    name: 'Covid-19 and Amazon',
+    url: '/',
+  },
 ]
 
 const Footer: FC<Props> = ({ className, pages }) => {
@@ -29,23 +65,18 @@ const Footer: FC<Props> = ({ className, pages }) => {
   return (
     <footer className={rootClassName}>
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 border-b border-accent-2 py-12 text-primary bg-primary transition-colors duration-150">
-          <div className="col-span-1 lg:col-span-2">
-            <Link href="/">
-              <a className="flex flex-initial items-center font-bold md:mr-24">
-                <span className="rounded-full border border-accent-6 mr-2">
-                  <Logo />
-                </span>
-                <span>ACME</span>
-              </a>
+        <div className="grid grid-cols-2 transition-colors duration-150 border-b whitespace-nowrap lg:grid-cols-12 border-accent-2 text-primary bg-amazon-dark-blue">
+          <div className="flex items-center justify-center w-full p-4 text-white col-span-full bg-amazon-light-blue">
+            <Link scroll={true} href="">
+              Back to top
             </Link>
           </div>
-          <div className="col-span-1 lg:col-span-8">
-            <div className="grid md:grid-rows-4 md:grid-cols-3 md:grid-flow-col">
+          <div className="col-span-1 p-6 lg:col-span-8 lg:ml-36 lg:mt-2">
+            <div className="grid grid-cols-2 gap-x-48 md:grid-rows-4 md:grid-cols-4 md:grid-flow-col">
               {[...links, ...sitePages].map((page) => (
                 <span key={page.url} className="py-3 md:py-0 md:pb-4">
                   <Link href={page.url!}>
-                    <a className="text-accent-9 hover:text-accent-6 transition ease-in-out duration-150">
+                    <a className="text-white transition duration-150 ease-in-out hover:text-accent-6">
                       {page.name}
                     </a>
                   </Link>
@@ -53,38 +84,17 @@ const Footer: FC<Props> = ({ className, pages }) => {
               ))}
             </div>
           </div>
-          <div className="col-span-1 lg:col-span-2 flex items-start lg:justify-end text-primary">
-            <div className="flex space-x-6 items-center h-10">
+          {/* <div className="flex items-start col-span-1 lg:col-span-2 lg:justify-end text-primary">
+            <div className="flex items-center h-10 space-x-6">
               <a
                 className={s.link}
                 aria-label="Github Repository"
-                href="https://github.com/vercel/commerce"
+                href="https://github.com/atulkamath/amazon-clone-with-shopify"
               >
                 <Github />
               </a>
-              <I18nWidget />
             </div>
-          </div>
-        </div>
-        <div className="pt-6 pb-10 flex flex-col md:flex-row justify-between items-center space-y-4 text-accent-6 text-sm">
-          <div>
-            <span>&copy; 2020 ACME, Inc. All rights reserved.</span>
-          </div>
-          <div className="flex items-center text-primary text-sm">
-            <span className="text-primary">Created by</span>
-            <a
-              rel="noopener noreferrer"
-              href="https://vercel.com"
-              aria-label="Vercel.com Link"
-              target="_blank"
-              className="text-primary"
-            >
-              <Vercel
-                className="inline-block h-6 ml-3 text-primary"
-                alt="Vercel.com Logo"
-              />
-            </a>
-          </div>
+          </div> */}
         </div>
       </Container>
     </footer>
