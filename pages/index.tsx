@@ -76,16 +76,18 @@ export default function Home({
 
       <Grid className="hidden grid-cols-4 bg-accent-2 lg:grid">
         <Grid
+          title="Latest t-shirt deals"
           variant="filled"
-          className="items-center justify-center hidden grid-cols-2 gap-4 bg-white lg:grid hide-scroll-bar"
+          className="items-center justify-center hidden grid-cols-2 gap-4 lg:grid hide-scroll-bar"
         >
           {products.slice(0, 4).map((product: any, _i: number) => (
             <ProductCard variant="slim" key={product.id} product={product} />
           ))}
         </Grid>
         <Grid
+          title="Latest electronic deals"
           variant="filled"
-          className="items-center justify-center hidden grid-cols-2 gap-4 bg-white lg:grid hide-scroll-bar "
+          className="items-center justify-center hidden grid-cols-2 gap-4 lg:grid hide-scroll-bar "
         >
           {products.slice(4, 8).map((product: any, _i: number) => (
             <ProductCard variant="slim" key={product.id} product={product} />
