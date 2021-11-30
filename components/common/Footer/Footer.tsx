@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useRef } from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -49,8 +49,13 @@ const Footer: FC<Props> = ({ className, pages }) => {
   return (
     <footer className={rootClassName}>
       <Container>
-        <div className="grid grid-cols-2 p-4 py-12 transition-colors duration-150 border-b whitespace-nowrap lg:grid-cols-12 border-accent-2 text-primary bg-amazon-dark-blue">
-          <div className="col-span-1 lg:col-span-8">
+        <div className="grid grid-cols-2 transition-colors duration-150 border-b whitespace-nowrap lg:grid-cols-12 border-accent-2 text-primary bg-amazon-dark-blue">
+          <div className="flex items-center justify-center w-full p-4 text-white col-span-full bg-amazon-light-blue">
+            <Link scroll={true} href="">
+              Top of the page
+            </Link>
+          </div>
+          <div className="col-span-1 p-4 lg:col-span-8">
             <div className="grid grid-cols-2 gap-x-48 md:grid-rows-4 md:grid-cols-3 md:grid-flow-col">
               {[...links, ...sitePages].map((page) => (
                 <span key={page.url} className="py-3 md:py-0 md:pb-4">
