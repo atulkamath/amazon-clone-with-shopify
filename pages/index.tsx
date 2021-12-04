@@ -14,7 +14,7 @@ export async function getStaticProps({
 }: GetStaticPropsContext) {
   const config = { locale, locales }
   const productsPromise = commerce.getAllProducts({
-    variables: { first: 20 },
+    variables: { first: 24 },
     config,
     preview,
     // Sale or provider only
@@ -50,7 +50,7 @@ export default function Home({
         {' '}
         White Friday Deals
       </h1>
-      <Grid className="flex p-4 -ml-4 space-x-4 overflow-x-scroll bg-accent-2 hide-scroll-bar ">
+      <Grid className="flex -ml-8 space-x-4 overflow-x-scroll bg-accent-2 hide-scroll-bar ">
         {products.map((product: any, _i: number) => (
           <ProductCard key={product.id} product={product} />
         ))}
@@ -93,12 +93,30 @@ export default function Home({
             <ProductCard variant="slim" key={product.id} product={product} />
           ))}
         </Grid>
+        <Grid
+          title="Latest game deals"
+          variant="filled"
+          className="items-center justify-center hidden grid-cols-2 gap-4 lg:grid hide-scroll-bar "
+        >
+          {products.slice(8, 12).map((product: any, _i: number) => (
+            <ProductCard variant="slim" key={product.id} product={product} />
+          ))}
+        </Grid>
+        <Grid
+          title="Latest instrument deals"
+          variant="filled"
+          className="items-center justify-center hidden grid-cols-2 gap-4 lg:grid hide-scroll-bar "
+        >
+          {products.slice(12, 16).map((product: any, _i: number) => (
+            <ProductCard variant="slim" key={product.id} product={product} />
+          ))}
+        </Grid>
       </Grid>
 
       <h1 className="px-4 pt-4 text-xl bg-accent-2 whitespace-nowrap">
         Last chance deals | Up to 40% off
       </h1>
-      <Grid className="flex p-4 -ml-4 space-x-4 overflow-x-scroll border-none bg-accent-2 hide-scroll-bar ">
+      <Grid className="flex p-4 -ml-8 space-x-4 overflow-x-scroll border-none bg-accent-2 hide-scroll-bar ">
         {products.slice(6, 13).map((product: any, _i: number) => (
           <ProductCard key={product.id} product={product} />
         ))}
