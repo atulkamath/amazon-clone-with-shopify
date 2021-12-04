@@ -3,6 +3,7 @@ module.exports = {
     purgeLayersByDefault: true,
     applyComplexClasses: true,
   },
+
   purge: {
     content: [
       './pages/**/*.{js,ts,jsx,tsx}',
@@ -66,6 +67,11 @@ module.exports = {
       },
       scale: {
         120: '1.2',
+      },
+      translate: {
+        count1: -1500,
+        count2: -3000,
+        count3: -4500,
       },
     },
   },
