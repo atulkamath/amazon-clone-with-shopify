@@ -13,47 +13,45 @@ const LargeCarousel = () => {
   const [lastIndex, setLastIndex] = useState(1)
 
   return (
-    <div className={'hidden overflow-x-scroll sm:flex'}>
-      {firstIndex > 0 && (
+    <div className="hidden w-full overflow-x-hidden sm:flex ">
+      <button
+        className="absolute z-20 items-center justify-center top-60 left-10"
+        onClick={() => {
+          setFirstIndex(firstIndex - 1)
+          if (firstIndex < -3) {
+            setFirstIndex(-1)
+          }
+          setLastIndex(lastIndex - 1)
+        }}
+      >
+        <ChevronLeftIcon className="w-24 h-16 text-white" />
+      </button>
+      <button
+        className="absolute z-20 items-center justify-center top-60 right-10"
+        onClick={() => {
+          setFirstIndex(firstIndex + 1)
+          if (firstIndex > 2) {
+            setFirstIndex(0)
+          }
+          setLastIndex(lastIndex + 1)
+        }}
+      >
+        <ChevronRightIcon className="w-24 h-16 text-white" />
+      </button>
+      {largeImage.map((item, index) => (
         <div
-          className=""
-          onClick={() => {
-            setFirstIndex(firstIndex - 1)
-            setLastIndex(lastIndex - 1)
-          }}
+          className={` transform translate-x-count${firstIndex} transition duration-500`}
+          key={index}
         >
-          <button>
-            <ChevronLeftIcon className="absolute z-20 h-20 text-white w-14 left-16 top-52" />
-          </button>
+          <Image
+            src={item}
+            width={1500}
+            height={600}
+            alt="error"
+            layout="fixed"
+          />
         </div>
-      )}
-      {lastIndex < largeImage.length && (
-        <div
-          onClick={() => {
-            setFirstIndex(firstIndex + 1)
-            setLastIndex(lastIndex + 1)
-          }}
-        >
-          <button>
-            <ChevronRightIcon className="absolute z-20 h-20 text-white w-14 top-52 right-16" />
-          </button>
-        </div>
-      )}
-      {largeImage.map((item, i) => {
-        if (i >= firstIndex && i < lastIndex) {
-          return (
-            <Image
-              width={1440}
-              height={600}
-              src={item}
-              layout={'fixed'}
-              alt="hero image"
-            />
-          )
-        } else {
-          return null
-        }
-      })}
+      ))}
     </div>
   )
 }
