@@ -72,7 +72,9 @@ module.exports = {
         count1: -1500,
         count2: -3000,
         count3: -4500,
-
+        'count-1': -4500,
+        'count-2': -3000,
+        'count-3': -1500,
         count5: -3000,
         count6: -4500,
       },
