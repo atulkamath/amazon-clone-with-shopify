@@ -13,13 +13,16 @@ const LargeCarousel = () => {
   const [lastIndex, setLastIndex] = useState(1)
 
   return (
-    <div className={'hidden overflow-x-scroll sm:flex'}>
+    <div className={'hidden overflow-x-scroll sm:flex '}>
       {firstIndex > 0 && (
         <div
           className=""
           onClick={() => {
             setFirstIndex(firstIndex - 1)
             setLastIndex(lastIndex - 1)
+            if (firstIndex > 3) {
+              setFirstIndex(0)
+            }
           }}
         >
           <button>
@@ -32,6 +35,9 @@ const LargeCarousel = () => {
           onClick={() => {
             setFirstIndex(firstIndex + 1)
             setLastIndex(lastIndex + 1)
+            if (firstIndex > 3) {
+              setFirstIndex(0)
+            }
           }}
         >
           <button>
