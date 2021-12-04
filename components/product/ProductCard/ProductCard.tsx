@@ -45,8 +45,8 @@ const ProductCard: FC<Props> = ({
         {variant === 'slim' && (
           <>
             <div className={s.header}>
-              <h1 className="text-3xl">{title}</h1>
-              <span>{product.name}</span>
+              {/* <h1 className="text-2xl">{title}</h1>
+              <span>{product.name}</span> */}
             </div>
             {product?.images && (
               <div>
@@ -60,9 +60,11 @@ const ProductCard: FC<Props> = ({
                   objectFit="contain"
                   {...imgProps}
                 />
-                {/* <h2>{product.name}</h2> */}
               </div>
             )}
+            <h2 className="flex flex-col w-full text-base bg-white sm:text-sm overflow-ellipsis">
+              {product.name}
+            </h2>
           </>
         )}
 

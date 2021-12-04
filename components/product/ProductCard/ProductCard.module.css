@@ -31,7 +31,7 @@
 
 /* Variant Slim */
 .slim {
-  @apply flex flex-col items-center justify-center w-full overflow-hidden bg-transparent whitespace-nowrap;
+  @apply flex flex-col items-center justify-center overflow-hidden bg-transparent whitespace-nowrap;
 }
 
 .slim .header {
