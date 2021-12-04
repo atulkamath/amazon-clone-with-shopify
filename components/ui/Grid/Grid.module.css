@@ -1,11 +1,12 @@
 .root {
-  @apply gap-4 border-b-4 border-gray-300 lg:border-none lg:bg-accent-2;
+  @apply gap-4 border-b-4 border-gray-300 lg:border-0 bg-accent-2;
 }
 
 .layoutA {
   @apply p-4;
 
   &.filled {
+    @apply bg-white;
     & > *:nth-child(6n + 1) {
       @apply bg-transparent;
     }
