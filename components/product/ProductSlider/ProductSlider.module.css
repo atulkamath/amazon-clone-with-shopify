@@ -25,7 +25,7 @@
 }
 
 .album {
-  @apply flex items-center justify-center space-x-4 bg-white lg:absolute lg:top-2 lg:space-y-4 lg:flex-col;
+  @apply flex items-center justify-center space-x-4 bg-white lg:px-2 lg:absolute lg:top-2 lg:space-y-4 lg:flex-col;
   box-sizing: content-box;
   overflow-y: hidden;
   overflow-x: auto;
