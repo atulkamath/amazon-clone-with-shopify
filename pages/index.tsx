@@ -48,7 +48,7 @@ export default function Home({
       <h1 className="px-4 pt-4 text-2xl border-t-4 border-gray-300 bg-accent-2">
         White Friday Deals
       </h1>
-      <Grid className="flex -ml-4 space-x-4 overflow-x-scroll bg-accent-2 hide-scroll-bar ">
+      <Grid className="flex -ml-4 space-x-4 overflow-x-scroll lg:-ml-8 bg-accent-2 hide-scroll-bar ">
         {products.map((product: any, _i: number) => (
           <ProductCard key={product.id} product={product} />
         ))}
@@ -114,7 +114,7 @@ export default function Home({
       <h1 className="px-4 pt-4 text-xl bg-accent-2 whitespace-nowrap">
         Last chance deals | Up to 40% off
       </h1>
-      <Grid className="flex p-4 -ml-4 space-x-4 overflow-x-scroll border-none bg-accent-2 hide-scroll-bar ">
+      <Grid className="flex p-4 -ml-4 space-x-4 overflow-x-scroll border-none lg:-ml-8 bg-accent-2 hide-scroll-bar ">
         {products.slice(6, 13).map((product: any, _i: number) => (
           <ProductCard key={product.id} product={product} />
         ))}
