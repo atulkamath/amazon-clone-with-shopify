@@ -53,7 +53,7 @@ const links = [
     url: '/',
   },
   {
-    name: 'Covid-19 and Amazon',
+    name: 'Covid-19 & Amazon',
     url: '/',
   },
 ]
