@@ -27,11 +27,8 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
       <Container className="w-full max-w-none" clean>
         <div className={cn(s.root, 'fit')}>
           <div className={cn(s.main, 'fit')}>
-            <ProductTag
-              name={product.name}
-              price={`${price} ${product.price?.currencyCode}`}
-              fontSize={32}
-            />
+            <ProductTag name={product.name} price={''} fontSize={20} />
+
             <div className={s.sliderContainer}>
               <ProductSlider key={product.id}>
                 {product.images.map((image, i) => (
@@ -44,11 +41,13 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
                       height={600}
                       priority={i === 0}
                       quality="85"
+                      objectFit="contain"
                     />
                   </div>
                 ))}
               </ProductSlider>
             </div>
+            {price}
             {process.env.COMMERCE_WISHLIST_ENABLED && (
               <WishlistButton
                 className={s.wishlistButton}
