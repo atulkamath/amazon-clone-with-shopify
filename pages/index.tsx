@@ -44,10 +44,8 @@ export default function Home({
   return (
     <>
       <RoundCarousel />
-
       <Hero />
       <h1 className="px-4 pt-4 text-2xl border-t-4 border-gray-300 bg-accent-2">
-        {' '}
         White Friday Deals
       </h1>
       <Grid className="flex -ml-8 space-x-4 overflow-x-scroll bg-accent-2 hide-scroll-bar ">
