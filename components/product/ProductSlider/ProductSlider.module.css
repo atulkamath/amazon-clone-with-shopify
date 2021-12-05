@@ -21,11 +21,12 @@
 }
 
 .thumb img {
+  @apply invisible sm:visible;
   height: 5% !important;
 }
 
 .album {
-  @apply flex items-center justify-center space-x-4 bg-white lg:px-2 lg:absolute lg:top-2 lg:space-y-4 lg:flex-col;
+  @apply flex items-center justify-center py-4 space-x-4 bg-white sm:py-0 lg:space-x-0 lg:px-4 lg:absolute lg:top-2 lg:space-y-4 lg:flex-col;
   box-sizing: content-box;
   overflow-y: hidden;
   overflow-x: auto;
