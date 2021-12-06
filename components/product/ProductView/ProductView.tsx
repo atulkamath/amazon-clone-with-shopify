@@ -7,7 +7,7 @@ import type { Product } from '@commerce/types/product'
 import usePrice from '@framework/product/use-price'
 import { WishlistButton } from '@components/wishlist'
 import { ProductSlider, ProductCard } from '@components/product'
-import { Container, Text } from '@components/ui'
+import { Container, Rating, Text } from '@components/ui'
 import ProductSidebar from '../ProductSidebar'
 import ProductTag from '../ProductTag'
 interface ProductViewProps {
@@ -26,6 +26,12 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
         <div className={cn(s.root, 'fit')}>
           <div className={cn(s.main, 'fit')}>
             <ProductTag name={product.name} price={''} fontSize={32} />
+            <div className="flex flex-row items-center justify-between px-4 lg:hidden">
+              <Rating value={4} />
+              <div className="ml-2 -mb-1 text-sm font-medium text-amazon-link">
+                (36)
+              </div>
+            </div>
             <div className={s.sliderContainer}>
               <ProductSlider key={product.id}>
                 {product.images.map((image, i) => (
