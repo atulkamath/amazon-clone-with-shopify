@@ -49,6 +49,7 @@ const LargeCarousel = () => {
             height={600}
             alt="error"
             layout="fixed"
+            priority
           />
         </div>
       ))}
