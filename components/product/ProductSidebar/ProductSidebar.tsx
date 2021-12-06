@@ -42,20 +42,31 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
 
   return (
     <div className={className}>
+      <div className="hidden mb-2 -ml-2 text-2xl font-medium lg:flex">
+        {product.name}
+      </div>
       <ProductOptions
         options={product.options}
         selectedOptions={selectedOptions}
         setSelectedOptions={setSelectedOptions}
       />
-      <Text
-        className="w-full max-w-xl pb-4 break-words"
-        html={product.descriptionHtml || product.description}
-      />
-      <div className="flex flex-row items-center justify-between">
+      <div className="flex-row items-start hidden w-full -ml-2 space-x-2 border-b lg:flex">
         <Rating value={4} />
-        <div className="pr-1 text-sm font-medium text-accent-6">36 reviews</div>
+        <div className="text-amazon-link">36 reviews</div>
       </div>
-      <div>
+      <div className="flex mb-2 -ml-2 font-medium lg:mt-4 ">
+        Price:
+        <div className="flex flex-col ml-2 text-lg whitespace-nowrap text-red">
+          <span>
+            {product.price.currencyCode}
+            &nbsp;
+            {product.price.value}
+          </span>
+          <span className="text-sm text-black">All prices exclude VAT.</span>
+        </div>
+      </div>
+
+      <div className="w-full -ml-2">
         {process.env.COMMERCE_CART_ENABLED && (
           <Button
             aria-label="Add to Cart"
@@ -70,6 +81,10 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
               : 'Add To Cart'}
           </Button>
         )}
+        <Text
+          className="mt-2"
+          html={product.descriptionHtml || product.description}
+        />
       </div>
       <div className="mt-6">
         <Collapse title="Care">

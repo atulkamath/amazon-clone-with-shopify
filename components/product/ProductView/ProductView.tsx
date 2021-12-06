@@ -14,23 +14,21 @@ interface ProductViewProps {
   product: Product
   relatedProducts: Product[]
 }
-
 const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
   const { price } = usePrice({
     amount: product.price.value,
     baseAmount: product.price.retailPrice,
     currencyCode: product.price.currencyCode!,
   })
-
   return (
     <>
       <Container className="w-full max-w-none" clean>
         <div className={cn(s.root, 'fit')}>
           <div className={cn(s.main, 'fit')}>
-            <ProductTag name={product.name} price={''} fontSize={20} />
-            <div className="flex flex-row items-start justify-start pl-3">
+            <ProductTag name={product.name} price={''} fontSize={32} />
+            <div className="flex flex-row items-center justify-between px-4 lg:hidden">
               <Rating value={4} />
-              <div className="pl-1 text-sm font-medium text-amazon-link">
+              <div className="ml-2 -mb-1 text-sm font-medium text-amazon-link">
                 (36)
               </div>
             </div>
@@ -52,13 +50,6 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
                 ))}
               </ProductSlider>
             </div>
-            <div className="flex p-4 font-medium">
-              Price:
-              <div className="flex flex-col ml-2 whitespace-nowrap text-red">
-                <span>{price}</span>
-                <span className="text-black">All Prices exclude vat.</span>
-              </div>
-            </div>
             {process.env.COMMERCE_WISHLIST_ENABLED && (
               <WishlistButton
                 className={s.wishlistButton}
@@ -67,7 +58,6 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
               />
             )}
           </div>
-
           <ProductSidebar
             key={product.id}
             product={product}
@@ -119,5 +109,4 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
     </>
   )
 }
-
 export default ProductView
