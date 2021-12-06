@@ -42,12 +42,19 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
 
   return (
     <div className={className}>
+      <div className="hidden mb-2 -ml-2 text-2xl font-medium lg:flex">
+        {product.name}
+      </div>
       <ProductOptions
         options={product.options}
         selectedOptions={selectedOptions}
         setSelectedOptions={setSelectedOptions}
       />
-      <div className="flex mb-2 -ml-2 font-medium ">
+      <div className="flex-row items-start hidden w-full -ml-2 space-x-2 border-b lg:flex">
+        <Rating value={4} />
+        <div className="text-amazon-link">36 reviews</div>
+      </div>
+      <div className="flex mb-2 -ml-2 font-medium lg:mt-4 ">
         Price:
         <div className="flex flex-col ml-2 text-lg whitespace-nowrap text-red">
           <span>
@@ -59,7 +66,7 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
         </div>
       </div>
 
-      <div className="-ml-2">
+      <div className="w-full -ml-2">
         {process.env.COMMERCE_CART_ENABLED && (
           <Button
             aria-label="Add to Cart"
