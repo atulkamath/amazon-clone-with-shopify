@@ -9,11 +9,11 @@
 }
 
 .sidebar {
-  @apply flex flex-col w-full h-full col-span-1 px-6 py-6 mx-auto max-w-8xl;
+  @apply flex flex-col w-full h-full p-6 max-w-8xl;
 }
 
 .sliderContainer {
-  @apply flex items-center justify-center overflow-x-hidden bg-accent-1;
+  @apply flex items-center justify-center overflow-x-hidden border-b-4 bg-accent-1;
 }
 
 .imageContainer {
