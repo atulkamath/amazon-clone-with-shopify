@@ -67,14 +67,14 @@ const Footer: FC<Props> = ({ className, pages }) => {
       <Container>
         <div className="grid grid-cols-2 transition-colors duration-150 border-b whitespace-nowrap lg:grid-cols-12 border-accent-2 text-primary bg-amazon-dark-blue">
           <div className="flex items-center justify-center w-full p-4 text-white col-span-full bg-amazon-light-blue">
-            <Link scroll={true} href="">
+            <Link scroll={true} href="/">
               Back to top
             </Link>
           </div>
           <div className="col-span-1 p-6 lg:col-span-8 lg:ml-36 lg:mt-2">
             <div className="grid grid-cols-2 gap-x-48 md:grid-rows-4 md:grid-cols-4 md:grid-flow-col">
-              {[...links, ...sitePages].map((page) => (
-                <span key={page.url} className="py-3 md:py-0 md:pb-4">
+              {[...links, ...sitePages].map((page, i) => (
+                <span key={i} className="py-3 md:py-0 md:pb-4">
                   <Link href={page.url!}>
                     <a className="text-white transition duration-150 ease-in-out hover:text-accent-6">
                       {page.name}
