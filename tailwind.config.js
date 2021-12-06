@@ -4,13 +4,7 @@ module.exports = {
     applyComplexClasses: true,
   },
 
-  purge: {
-    options: {
-      safelist: {
-        standard: ['outline-none'],
-      },
-    },
-  },
+  purge: false,
   theme: {
     extend: {
       maxWidth: {
