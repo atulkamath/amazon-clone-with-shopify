@@ -36,6 +36,7 @@ const Hero: FC<HeroProps> = () => {
           src={smallImage[currentIndex]}
           layout={'responsive'}
           alt="hero image"
+          priority
         />
       </div>
       <TileCarousel />
