@@ -8,12 +8,13 @@ export interface RatingProps {
 }
 
 const Quantity: FC<RatingProps> = ({ value = 5 }) => (
-  <div className="flex flex-row py-6 text-accent-9">
+  <div className="flex flex-row text-amazon-orange">
     {rangeMap(5, (i) => (
       <span
         key={`star_${i}`}
-        className={cn('inline-block ml-1 ', {
-          'text-accent-5': i >= Math.floor(value),
+        className={cn('inline-block ml-1 mb-2 ', {
+          ' fill-current text-amazon-orange "stroke-current  ':
+            i >= Math.floor(value),
         })}
       >
         <Star />

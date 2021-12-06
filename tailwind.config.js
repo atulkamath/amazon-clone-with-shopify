@@ -51,6 +51,7 @@ module.exports = {
         'amazon-light-blue': '#37475A',
         'amazon-yellow': '#fcbb6a',
         'amazon-orange': '#f19c39',
+        'amazon-link': '#007185',
       },
       textColor: {
         base: 'var(--text-base)',
