@@ -1,19 +1,18 @@
 .body {
-  @apply text-base leading-7 max-w-6xl mx-auto;
+  @apply max-w-6xl mx-auto text-base leading-7;
 }
 
 .heading {
-  @apply text-5xl pt-1 pb-2 font-semibold tracking-wide cursor-pointer mb-2;
+  @apply pt-1 pb-2 mb-2 text-5xl font-semibold tracking-wide cursor-pointer;
 }
 
 .pageHeading {
-  @apply pt-1 pb-4 text-2xl leading-7 font-bold tracking-wide;
+  @apply pt-1 pb-4 text-2xl font-bold leading-7 tracking-wide;
 }
 
 .sectionHeading {
-  @apply pt-1 pb-2 text-2xl font-bold tracking-wide cursor-pointer mb-2;
+  @apply pt-1 pb-2 mb-2 text-base font-medium uppercase cursor-pointer;
 }
-
 
 /* Apply base font sizes and styles for typography markup (h2, h2, ul, p, etc.).
    A helpful addition for whenn page content is consumed from a source managed through a wysiwyg editor. */

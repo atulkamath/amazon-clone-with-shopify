@@ -21,8 +21,11 @@
 }
 
 /* Variant Simple */
+.simple .header {
+  @apply flex flex-col items-center border-0;
+}
 .simple .header .name {
-  @apply pt-2 -mt-1 text-lg leading-10;
+  @apply pt-2 -mt-1 text-lg font-bold leading-10;
 }
 
 .simple .header .price {
