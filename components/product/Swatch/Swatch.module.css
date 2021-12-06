@@ -14,7 +14,7 @@
 }
 
 .swatch:hover {
-  @apply transform lg:scale-110 bg-hover;
+  @apply text-white transform bg-black lg:scale-110;
 }
 
 .swatch > span {

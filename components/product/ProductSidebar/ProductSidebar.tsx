@@ -47,11 +47,19 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
         selectedOptions={selectedOptions}
         setSelectedOptions={setSelectedOptions}
       />
-      <Text
-        className="w-full max-w-xl pb-4 break-words"
-        html={product.descriptionHtml || product.description}
-      />
-      <div>
+      <div className="flex mb-2 -ml-2 font-medium ">
+        Price:
+        <div className="flex flex-col ml-2 text-lg whitespace-nowrap text-red">
+          <span>
+            {product.price.currencyCode}
+            &nbsp;
+            {product.price.value}
+          </span>
+          <span className="text-sm text-black">All prices exclude VAT.</span>
+        </div>
+      </div>
+
+      <div className="-ml-2">
         {process.env.COMMERCE_CART_ENABLED && (
           <Button
             aria-label="Add to Cart"
@@ -66,6 +74,10 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
               : 'Add To Cart'}
           </Button>
         )}
+        <Text
+          className="mt-2"
+          html={product.descriptionHtml || product.description}
+        />
       </div>
       <div className="mt-6">
         <Collapse title="Care">

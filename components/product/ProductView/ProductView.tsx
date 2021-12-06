@@ -52,13 +52,18 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
                 ))}
               </ProductSlider>
             </div>
-            <div className="flex p-4 font-medium">
+            <ProductSidebar
+              key={product.id}
+              product={product}
+              className={s.sidebar}
+            />
+            {/* <div className="flex p-4 font-medium">
               Price:
               <div className="flex flex-col ml-2 whitespace-nowrap text-red">
                 <span>{price}</span>
                 <span className="text-black">All Prices exclude vat.</span>
               </div>
-            </div>
+            </div> */}
             {process.env.COMMERCE_WISHLIST_ENABLED && (
               <WishlistButton
                 className={s.wishlistButton}
@@ -67,12 +72,6 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
               />
             )}
           </div>
-
-          <ProductSidebar
-            key={product.id}
-            product={product}
-            className={s.sidebar}
-          />
         </div>
         <hr className="mt-7 border-accent-2" />
         <section className="px-6 py-12 mb-10">
