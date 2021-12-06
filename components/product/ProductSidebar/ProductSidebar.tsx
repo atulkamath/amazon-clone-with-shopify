@@ -51,10 +51,6 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
         className="w-full max-w-xl pb-4 break-words"
         html={product.descriptionHtml || product.description}
       />
-      <div className="flex flex-row items-center justify-between">
-        <Rating value={4} />
-        <div className="pr-1 text-sm font-medium text-accent-6">36 reviews</div>
-      </div>
       <div>
         {process.env.COMMERCE_CART_ENABLED && (
           <Button
