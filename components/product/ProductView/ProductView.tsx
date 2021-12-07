@@ -64,9 +64,11 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
             className={s.sidebar}
           />
         </div>
-        <hr className="mt-7 border-accent-2" />
-        <section className="px-6 py-12 mb-10">
-          <Text variant="sectionHeading">Related Products</Text>
+        <hr className="mt-2 border-accent-2" />
+        <section className="px-6 py-4 mb-10 -ml-2">
+          <Text variant="sectionHeading">
+            Customers who viewed this item also viewed
+          </Text>
           <div className={s.relatedProductsGrid}>
             {relatedProducts.map((p) => (
               <div
@@ -74,7 +76,6 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
                 className="border animated fadeIn bg-accent-0 border-accent-2"
               >
                 <ProductCard
-                  noNameTag
                   product={p}
                   key={p.path}
                   variant="simple"
