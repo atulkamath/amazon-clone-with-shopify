@@ -79,18 +79,31 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
 
       <div className="w-full p-3 ">
         {process.env.COMMERCE_CART_ENABLED && (
-          <Button
-            aria-label="Add to Cart"
-            type="button"
-            className={s.button}
-            onClick={addToCart}
-            loading={loading}
-            disabled={variant?.availableForSale === false}
-          >
-            {variant?.availableForSale === false
-              ? 'Not Available'
-              : 'Add To Cart'}
-          </Button>
+          <div className="flex space-x-4">
+            <Button
+              aria-label="Add to Cart"
+              type="button"
+              className={s.button}
+              onClick={addToCart}
+              loading={loading}
+              disabled={variant?.availableForSale === false}
+            >
+              {variant?.availableForSale === false
+                ? 'Not Available'
+                : 'Add To Cart'}
+            </Button>
+            <Button
+              aria-label="Buy Now"
+              type="button"
+              className={s.button2}
+              loading={loading}
+              disabled={variant?.availableForSale === false}
+            >
+              {variant?.availableForSale === false
+                ? 'Not Available'
+                : 'Buy Now'}
+            </Button>
+          </div>
         )}
         {/* w-screen p-4 mt-4 -ml-4 border-t */}
         <div className="p-1 mt-4 ">
