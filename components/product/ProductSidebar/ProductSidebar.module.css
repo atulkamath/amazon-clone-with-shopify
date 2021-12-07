@@ -54,7 +54,9 @@
 .button {
   @apply flex items-start justify-start w-full p-3 text-black bg-yellow-300 lg:w-48 rounded-2xl lg:justify-center lg:items-center;
 }
-
+.button2 {
+  @apply flex items-start justify-start w-full p-3 text-black bg-yellow-500 hover:bg-yellow-600 lg:w-48 rounded-2xl lg:justify-center lg:items-center;
+}
 .wishlistButton {
   @apply absolute top-0 right-0 z-30;
 }
