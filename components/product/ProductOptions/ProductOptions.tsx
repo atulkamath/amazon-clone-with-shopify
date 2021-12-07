@@ -18,7 +18,7 @@ const ProductOptions: React.FC<ProductOptionsProps> = ({
     <div>
       {options.map((opt) => (
         <div
-          className="w-screen p-4  border-t-4 border-b "
+          className="w-screen p-4 border-t-4 border-b lg:p-3 lg:border-t-0 "
           key={opt.displayName}
         >
           <h2 className="text-sm font-medium tracking-wide uppercase">
