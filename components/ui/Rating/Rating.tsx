@@ -8,7 +8,7 @@ export interface RatingProps {
 }
 
 const Quantity: FC<RatingProps> = ({ value = 5 }) => (
-  <div className="flex flex-row text-amazon-orange">
+  <div className="flex flex-row text-amazon-orange lg:ml-2">
     {rangeMap(5, (i) => (
       <span
         key={`star_${i}`}

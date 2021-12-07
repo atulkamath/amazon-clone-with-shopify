@@ -4,6 +4,7 @@ import { FC, useEffect, useState } from 'react'
 import { ProductOptions } from '@components/product'
 import type { Product } from '@commerce/types/product'
 import { Button, Text, Rating, Collapse, useUI } from '@components/ui'
+import moment from 'moment'
 import {
   getProductVariant,
   selectDefaultOptionFromProduct,
@@ -40,21 +41,25 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
     }
   }
 
+  let day = moment().add(1, 'days').format('dddd')
+  let date = moment().add(1, 'days').date()
+  let month = moment().format('MMM')
+
   return (
     <div className={className}>
-      <div className="hidden mb-2 -ml-2 text-2xl font-medium lg:flex">
+      <div className="hidden mb-2 -ml-2 text-2xl font-medium lg:ml-2 lg:flex">
         {product.name}
+      </div>
+      <div className="flex-row items-start hidden w-full -ml-2 space-x-2 border-b lg:-ml-0 lg:flex">
+        <Rating value={4} />
+        <div className="text-amazon-link">36 reviews</div>
       </div>
       <ProductOptions
         options={product.options}
         selectedOptions={selectedOptions}
         setSelectedOptions={setSelectedOptions}
       />
-      <div className="flex-row items-start hidden w-full -ml-2 space-x-2 border-b lg:flex">
-        <Rating value={4} />
-        <div className="text-amazon-link">36 reviews</div>
-      </div>
-      <div className="flex mb-2 -ml-2 font-medium lg:mt-4 ">
+      <div className="flex p-4 font-medium lg:mt-4 ">
         Price:
         <div className="flex flex-col ml-2 text-lg whitespace-nowrap text-red">
           <span>
@@ -65,8 +70,14 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
           <span className="text-sm text-black">All prices exclude VAT.</span>
         </div>
       </div>
+      <div className="flex px-4 text-amazon-link">
+        Free delivery:
+        <h2 className="font-bold text-black ">
+          {day + ', ' + month + '. ' + date}
+        </h2>
+      </div>
 
-      <div className="w-full -ml-2">
+      <div className="w-full p-3 ">
         {process.env.COMMERCE_CART_ENABLED && (
           <Button
             aria-label="Add to Cart"
@@ -81,21 +92,14 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
               : 'Add To Cart'}
           </Button>
         )}
-        <Text
-          className="mt-2"
-          html={product.descriptionHtml || product.description}
-        />
-      </div>
-      <div className="mt-6">
-        <Collapse title="Care">
-          This is a limited edition production run. Printing starts when the
-          drop ends.
-        </Collapse>
-        <Collapse title="Details">
-          This is a limited edition production run. Printing starts when the
-          drop ends. Reminder: Bad Boys For Life. Shipping may take 10+ days due
-          to COVID-19.
-        </Collapse>
+        {/* w-screen p-4 mt-4 -ml-4 border-t */}
+        <div className="p-1 mt-4 ">
+          <h2 className="font-semibold uppercase ">About this item</h2>
+          <Text
+            className="mt-2"
+            html={product.descriptionHtml || product.description}
+          />
+        </div>
       </div>
     </div>
   )

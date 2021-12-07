@@ -52,8 +52,7 @@
 }
 
 .button {
-  @apply flex items-start justify-start p-3 text-black bg-yellow-300 rounded-2xl;
-  width: 100%;
+  @apply flex items-start justify-start w-full p-3 text-black bg-yellow-300 lg:w-48 rounded-2xl lg:justify-center lg:items-center;
 }
 
 .wishlistButton {

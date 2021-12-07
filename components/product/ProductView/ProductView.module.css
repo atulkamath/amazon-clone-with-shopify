@@ -9,7 +9,7 @@
 }
 
 .sidebar {
-  @apply flex flex-col items-start w-full h-full p-6 max-w-8xl;
+  @apply flex flex-col items-start w-full h-full max-w-8xl;
 }
 
 .sliderContainer {
