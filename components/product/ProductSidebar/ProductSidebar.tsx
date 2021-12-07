@@ -77,7 +77,7 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
         <div className="text-amazon-link">36 reviews</div>
       </div>
 
-      <div className="w-full p-4">
+      <div className="w-full p-3">
         {process.env.COMMERCE_CART_ENABLED && (
           <Button
             aria-label="Add to Cart"
@@ -92,21 +92,13 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
               : 'Add To Cart'}
           </Button>
         )}
-        <Text
-          className="mt-2"
-          html={product.descriptionHtml || product.description}
-        />
-      </div>
-      <div className="mt-6">
-        <Collapse title="Care">
-          This is a limited edition production run. Printing starts when the
-          drop ends.
-        </Collapse>
-        <Collapse title="Details">
-          This is a limited edition production run. Printing starts when the
-          drop ends. Reminder: Bad Boys For Life. Shipping may take 10+ days due
-          to COVID-19.
-        </Collapse>
+        <div className="w-screen p-4 mt-4 -ml-4 border-t">
+          <h2 className="font-medium uppercase">About this item</h2>
+          <Text
+            className="mt-2"
+            html={product.descriptionHtml || product.description}
+          />
+        </div>
       </div>
     </div>
   )
