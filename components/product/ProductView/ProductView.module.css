@@ -13,7 +13,7 @@
 }
 
 .sliderContainer {
-  @apply flex items-center justify-center overflow-x-hidden bg-accent-1;
+  @apply flex items-center justify-center w-full overflow-x-hidden bg-accent-1;
 }
 
 .imageContainer {
