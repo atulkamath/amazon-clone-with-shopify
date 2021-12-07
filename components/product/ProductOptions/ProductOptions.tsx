@@ -17,9 +17,13 @@ const ProductOptions: React.FC<ProductOptionsProps> = ({
   return (
     <div>
       {options.map((opt) => (
-        <div className="pb-4 -ml-2 " key={opt.displayName}>
+        <div
+          className="w-screen p-4  border-t-4 border-b "
+          key={opt.displayName}
+        >
           <h2 className="text-sm font-medium tracking-wide uppercase">
-            {opt.displayName}
+            {opt.displayName + ': '}
+            <span className="font-bold">{selectedOptions.size}</span>
           </h2>
           <div className="flex flex-row py-4">
             {opt.values.map((v, i: number) => {

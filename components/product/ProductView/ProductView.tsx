@@ -22,6 +22,7 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
   })
   return (
     <>
+      {console.log(product)}
       <Container className="w-full max-w-none" clean>
         <div className={cn(s.root, 'fit')}>
           <div className={cn(s.main, 'fit')}>

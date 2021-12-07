@@ -4,6 +4,7 @@ import { FC, useEffect, useState } from 'react'
 import { ProductOptions } from '@components/product'
 import type { Product } from '@commerce/types/product'
 import { Button, Text, Rating, Collapse, useUI } from '@components/ui'
+import moment from 'moment'
 import {
   getProductVariant,
   selectDefaultOptionFromProduct,
@@ -40,6 +41,10 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
     }
   }
 
+  let day = moment().add(1, 'days').format('dddd')
+  let date = moment().add(1, 'days').date()
+  let month = moment().format('MMM')
+
   return (
     <div className={className}>
       <div className="hidden mb-2 -ml-2 text-2xl font-medium lg:flex">
@@ -50,11 +55,7 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
         selectedOptions={selectedOptions}
         setSelectedOptions={setSelectedOptions}
       />
-      <div className="flex-row items-start hidden w-full -ml-2 space-x-2 border-b lg:flex">
-        <Rating value={4} />
-        <div className="text-amazon-link">36 reviews</div>
-      </div>
-      <div className="flex mb-2 -ml-2 font-medium lg:mt-4 ">
+      <div className="flex p-4 font-medium lg:mt-4 ">
         Price:
         <div className="flex flex-col ml-2 text-lg whitespace-nowrap text-red">
           <span>
@@ -65,8 +66,18 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
           <span className="text-sm text-black">All prices exclude VAT.</span>
         </div>
       </div>
+      <div className="px-4 space-x-4 text-amazon-link">
+        Free delivery:
+        <span className="font-bold text-black">
+          {day + ', ' + month + '. ' + date}
+        </span>
+      </div>
+      <div className="flex-row items-start hidden w-full -ml-2 space-x-2 border-b lg:flex">
+        <Rating value={4} />
+        <div className="text-amazon-link">36 reviews</div>
+      </div>
 
-      <div className="w-full -ml-2">
+      <div className="w-full p-4">
         {process.env.COMMERCE_CART_ENABLED && (
           <Button
             aria-label="Add to Cart"
