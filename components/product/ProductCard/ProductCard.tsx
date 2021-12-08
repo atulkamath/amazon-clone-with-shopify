@@ -15,6 +15,7 @@ interface Props {
   imgProps?: Omit<ImageProps, 'src' | 'layout' | 'placeholder' | 'blurDataURL'>
   variant?: 'default' | 'slim' | 'simple'
   title?: string
+  no?: number
 }
 
 const placeholderImg = '/product-img-placeholder.svg'
@@ -26,6 +27,7 @@ const ProductCard: FC<Props> = ({
   noNameTag = false,
   variant = 'default',
   title,
+  no,
 }) => {
   const { price } = usePrice({
     amount: product.price.value,
@@ -36,7 +38,8 @@ const ProductCard: FC<Props> = ({
   const rootClassName = cn(
     s.root,
     { [s.slim]: variant === 'slim', [s.simple]: variant === 'simple' },
-    className
+    className,
+    no === 0 ? '-ml-4' : null
   )
 
   return (

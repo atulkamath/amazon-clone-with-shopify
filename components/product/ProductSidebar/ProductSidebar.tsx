@@ -96,7 +96,6 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
               aria-label="Buy Now"
               type="button"
               className={s.button2}
-              loading={loading}
               disabled={variant?.availableForSale === false}
             >
               {variant?.availableForSale === false
