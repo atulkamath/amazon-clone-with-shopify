@@ -50,7 +50,7 @@ export default function Home({
       </h1>
       <Grid className="flex -ml-4 space-x-4 overflow-x-scroll lg:-ml-8 bg-accent-2 hide-scroll-bar ">
         {products.map((product: any, _i: number) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} no={_i} />
         ))}
       </Grid>
       <Grid
