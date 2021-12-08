@@ -1,7 +1,7 @@
 {
-  "name": "Next.js Commerce",
-  "short_name": "Next.js Commerce",
-  "description": "Next.js Commerce -> https://www.nextjs.org/commerce",
+  "name": "atul-amazon-clone",
+  "short_name": "amazon-clone",
+  "description": "This is an e-commerce clone created using Next.js commerce.",
   "display": "standalone",
   "start_url": "/",
   "theme_color": "#fff",
@@ -9,12 +9,12 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "/icon-192x192.png",
-      "type": "image/png",
+      "src": "/favicon_small.jpeg",
+      "type": "image/jpeg",
       "sizes": "192x192"
     },
     {
-      "src": "/icon-512x512.png",
+      "src": "/favicon_large.png",
       "type": "image/png",
       "sizes": "512x512"
     }
