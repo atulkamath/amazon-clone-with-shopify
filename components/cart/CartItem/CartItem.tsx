@@ -82,23 +82,23 @@ const CartItem = ({
       })}
       {...rest}
     >
-      <div className="flex flex-row space-x-4 py-4">
-        <div className="w-16 h-16 bg-violet relative overflow-hidden cursor-pointer z-0">
+      <div className="flex flex-row py-4 space-x-4">
+        <div className="relative z-0 w-16 h-16 overflow-hidden cursor-pointer bg-amazon-dark-blue">
           <Link href={`/product/${item.path}`}>
             <a>
               <Image
                 onClick={() => closeSidebarIfPresent()}
-                className={s.productImage}
-                width={150}
-                height={150}
+                width={200}
+                height={200}
                 src={item.variant.image!.url}
                 alt={item.variant.image!.altText}
+                objectFit="contain"
                 unoptimized
               />
             </a>
           </Link>
         </div>
-        <div className="flex-1 flex flex-col text-base">
+        <div className="flex flex-col flex-1 text-base">
           <Link href={`/product/${item.path}`}>
             <a>
               <span
@@ -114,18 +114,18 @@ const CartItem = ({
               {options.map((option: ItemOption, i: number) => (
                 <div
                   key={`${item.id}-${option.name}`}
-                  className="text-sm font-semibold text-accent-7 inline-flex items-center justify-center"
+                  className="inline-flex items-center justify-center text-sm font-semibold text-accent-7"
                 >
                   {option.name}
                   {option.name === 'Color' ? (
                     <span
-                      className="mx-2 rounded-full bg-transparent border w-5 h-5 p-1 text-accent-9 inline-flex items-center justify-center overflow-hidden"
+                      className="inline-flex items-center justify-center w-5 h-5 p-1 mx-2 overflow-hidden bg-transparent border rounded-full text-accent-9"
                       style={{
                         backgroundColor: `${option.value}`,
                       }}
                     ></span>
                   ) : (
-                    <span className="mx-2 rounded-full bg-transparent border h-5 p-1 text-accent-9 inline-flex items-center justify-center overflow-hidden">
+                    <span className="inline-flex items-center justify-center h-5 p-1 mx-2 overflow-hidden bg-transparent border rounded-full text-accent-9">
                       {option.value}
                     </span>
                   )}
