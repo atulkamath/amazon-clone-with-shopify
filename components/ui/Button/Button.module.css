@@ -4,11 +4,9 @@
 }
 
 .root:hover {
-  @apply bg-yellow-400;
+  @apply bg-accent-6;
 }
-.button2:hover {
-  @apply hover:bg-yellow-600;
-}
+
 .root:focus {
   @apply outline-none shadow-outline-normal;
 }
