@@ -76,12 +76,12 @@ export default function Cart() {
               </h2>
             </div>
           ) : (
-            <div className="flex-1 px-4 py-8 sm:px-6">
+            <div className="flex-1 px-4 py-4 sm:py-8 sm:px-6">
               <Text className="hidden lg:block" variant="pageHeading">
                 Shopping Cart
               </Text>
               {/* <Text variant="sectionHeading">Review your Order</Text> */}
-              <ul className="py-6 space-y-6 border-b sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accent-2 border-accent-2">
+              <ul className="space-y-6 border-b sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accent-2 border-accent-2">
                 {data!.lineItems.map((item: any) => (
                   <CartItem
                     key={item.id}
