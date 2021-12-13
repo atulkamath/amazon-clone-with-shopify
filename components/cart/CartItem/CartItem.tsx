@@ -10,6 +10,7 @@ import usePrice from '@framework/product/use-price'
 import useUpdateItem from '@framework/cart/use-update-item'
 import useRemoveItem from '@framework/cart/use-remove-item'
 import Quantity from '@components/ui/Quantity'
+import { Rating } from '@components/ui'
 
 type ItemOption = {
   name: string
@@ -112,6 +113,10 @@ const CartItem = ({
             </a>
           </Link>
           <span className="font-bold">{price}</span>
+          <div className=" -ml-0.5 sm:-ml-2.5 flex items-start justify-start text-amazon-link ">
+            <Rating value={3} />
+            <span className="ml-1 text-xs leading-loose">(36)</span>
+          </div>
           {options && options.length > 0 && (
             <div className="flex items-center pb-1">
               {options.map((option: ItemOption, i: number) => (
