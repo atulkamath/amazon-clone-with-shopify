@@ -81,6 +81,7 @@ export default function Cart() {
                 Shopping Cart
               </Text>
               <hr />
+
               {/* <Text variant="sectionHeading">Review your Order</Text> */}
               <ul className="space-y-6 border-b sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accent-2 border-accent-2">
                 {data!.lineItems.map((item: any) => (
@@ -91,23 +92,10 @@ export default function Cart() {
                   />
                 ))}
               </ul>
-              {/* <div className="my-6">
-                <Text>
-                  Before you leave, take a look at these items. We picked them
-                  just for you
-                </Text>
-                <div className="flex py-6 space-x-6">
-                  {[1, 2, 3, 4, 5, 6].map((x) => (
-                    <div
-                      key={x}
-                      className="w-full h-24 duration-75 transform bg-opacity-50 border cursor-pointer border-accent-3 bg-accent-2 hover:scale-110"
-                    />
-                  ))}
-                </div>
-              </div> */}
             </div>
           )}
         </div>
+
         <div className="lg:col-span-4">
           <div className="flex-shrink-0 px-4 sm:py-6 sm:px-6">
             {process.env.COMMERCE_CUSTOMCHECKOUT_ENABLED && (
@@ -174,6 +162,19 @@ export default function Cart() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="flex flex-col order-none p-4 lg:p-20 lg:py-10">
+        <Text variant="pageHeading">
+          Customers who bought items in your cart also bought
+        </Text>
+        <div className="flex py-6 space-x-6">
+          {[1, 2, 3, 4, 5].map((x) => (
+            <div
+              key={x}
+              className="w-full h-40 duration-75 transform bg-opacity-50 border cursor-pointer border-accent-3 bg-accent-2 hover:scale-110"
+            />
+          ))}
         </div>
       </div>
     </div>
