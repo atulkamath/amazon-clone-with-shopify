@@ -10,6 +10,7 @@ import usePrice from '@framework/product/use-price'
 import useUpdateItem from '@framework/cart/use-update-item'
 import useRemoveItem from '@framework/cart/use-remove-item'
 import Quantity from '@components/ui/Quantity'
+import { Rating } from '@components/ui'
 
 type ItemOption = {
   name: string
@@ -82,14 +83,14 @@ const CartItem = ({
       })}
       {...rest}
     >
-      <div className="flex flex-row py-4 space-x-4">
-        <div className="relative z-0 w-16 h-16 overflow-hidden cursor-pointer bg-amazon-dark-blue">
+      <div className="flex flex-row py-4 space-x-4 ">
+        <div className="relative z-0 w-16 overflow-hidden cursor-pointer sm:w-1/4 ">
           <Link href={`/product/${item.path}`}>
             <a>
               <Image
                 onClick={() => closeSidebarIfPresent()}
-                width={200}
-                height={200}
+                width={150}
+                height={150}
                 src={item.variant.image!.url}
                 alt={item.variant.image!.altText}
                 objectFit="contain"
@@ -109,6 +110,11 @@ const CartItem = ({
               </span>
             </a>
           </Link>
+          <span className="font-bold">{price}</span>
+          <div className=" -ml-0.5 sm:-ml-2.5 flex items-start justify-start text-amazon-link ">
+            <Rating value={3} />
+            <span className="ml-1 text-xs leading-loose">(36)</span>
+          </div>
           {options && options.length > 0 && (
             <div className="flex items-center pb-1">
               {options.map((option: ItemOption, i: number) => (
@@ -138,9 +144,8 @@ const CartItem = ({
             <div className="text-sm tracking-wider">{quantity}x</div>
           )}
         </div>
-        <div className="flex flex-col justify-between space-y-2 text-sm">
-          <span>{price}</span>
-        </div>
+        {/* <div className="flex flex-col justify-between space-y-2 text-sm"> */}
+        {/* </div> */}
       </div>
       {variant === 'default' && (
         <Quantity

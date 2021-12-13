@@ -3,7 +3,7 @@ import useCart from '@framework/cart/use-cart'
 import usePrice from '@framework/product/use-price'
 import commerce from '@lib/api/commerce'
 import { Layout } from '@components/common'
-import { Button, Text } from '@components/ui'
+import { Button, Rating, Text } from '@components/ui'
 import { Bag, Cross, Check, MapPin, CreditCard } from '@components/icons'
 import { CartItem } from '@components/cart'
 
@@ -43,7 +43,7 @@ export default function Cart() {
   return (
     <div className="sm:bg-accent-1">
       <div className="grid w-full mx-auto lg:grid-cols-12 max-w-7xl ">
-        <div className="order-last lg:col-span-8 sm:order-none">
+        <div className="order-last lg:col-span-8 sm:order-none sm:bg-white lg:mt-6 lg:mb-12 ">
           {isLoading || isEmpty ? (
             <div className="flex flex-col items-center justify-center flex-1 px-12 py-24 ">
               <span className="flex items-center justify-center w-16 h-16 p-12 border border-dashed rounded-lg border-secondary bg-primary text-primary">
@@ -76,12 +76,14 @@ export default function Cart() {
               </h2>
             </div>
           ) : (
-            <div className="flex-1 px-4 py-8 sm:px-6">
+            <div className="flex-1 px-4 py-4 sm:py-8 sm:px-6">
               <Text className="hidden lg:block" variant="pageHeading">
                 Shopping Cart
               </Text>
+              <hr />
+
               {/* <Text variant="sectionHeading">Review your Order</Text> */}
-              <ul className="py-6 space-y-6 border-b sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accent-2 border-accent-2">
+              <ul className="space-y-6 border-b sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accent-2 border-accent-2">
                 {data!.lineItems.map((item: any) => (
                   <CartItem
                     key={item.id}
@@ -90,25 +92,12 @@ export default function Cart() {
                   />
                 ))}
               </ul>
-              <div className="my-6">
-                <Text>
-                  Before you leave, take a look at these items. We picked them
-                  just for you
-                </Text>
-                <div className="flex py-6 space-x-6">
-                  {[1, 2, 3, 4, 5, 6].map((x) => (
-                    <div
-                      key={x}
-                      className="w-full h-24 duration-75 transform bg-opacity-50 border cursor-pointer border-accent-3 bg-accent-2 hover:scale-110"
-                    />
-                  ))}
-                </div>
-              </div>
             </div>
           )}
         </div>
+
         <div className="lg:col-span-4">
-          <div className="flex-shrink-0 px-4 sm:py-24 sm:px-6">
+          <div className="flex-shrink-0 px-4 sm:py-6 sm:px-6">
             {process.env.COMMERCE_CUSTOMCHECKOUT_ENABLED && (
               <>
                 {/* Shipping Address */}
@@ -173,6 +162,19 @@ export default function Cart() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="flex flex-col order-none p-4 lg:p-20 lg:py-10">
+        <Text variant="pageHeading">
+          Customers who bought items in your cart also bought
+        </Text>
+        <div className="flex py-6 space-x-6">
+          {[1, 2, 3, 4, 5].map((x) => (
+            <div
+              key={x}
+              className="w-full h-40 duration-75 transform bg-opacity-50 border cursor-pointer border-accent-3 bg-accent-2 hover:scale-110"
+            />
+          ))}
         </div>
       </div>
     </div>
