@@ -43,7 +43,7 @@ export default function Cart() {
   return (
     <div className="sm:bg-accent-1">
       <div className="grid w-full mx-auto lg:grid-cols-12 max-w-7xl ">
-        <div className="order-last lg:col-span-8 sm:order-none sm:bg-white ">
+        <div className="order-last lg:col-span-8 sm:order-none sm:bg-white lg:mt-6 lg:mb-12 ">
           {isLoading || isEmpty ? (
             <div className="flex flex-col items-center justify-center flex-1 px-12 py-24 ">
               <span className="flex items-center justify-center w-16 h-16 p-12 border border-dashed rounded-lg border-secondary bg-primary text-primary">
@@ -80,6 +80,7 @@ export default function Cart() {
               <Text className="hidden lg:block" variant="pageHeading">
                 Shopping Cart
               </Text>
+              <hr />
               {/* <Text variant="sectionHeading">Review your Order</Text> */}
               <ul className="space-y-6 border-b sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accent-2 border-accent-2">
                 {data!.lineItems.map((item: any) => (
@@ -90,7 +91,7 @@ export default function Cart() {
                   />
                 ))}
               </ul>
-              <div className="my-6">
+              {/* <div className="my-6">
                 <Text>
                   Before you leave, take a look at these items. We picked them
                   just for you
@@ -103,12 +104,12 @@ export default function Cart() {
                     />
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
           )}
         </div>
         <div className="lg:col-span-4">
-          <div className="flex-shrink-0 px-4 sm:py-24 sm:px-6">
+          <div className="flex-shrink-0 px-4 sm:py-6 sm:px-6">
             {process.env.COMMERCE_CUSTOMCHECKOUT_ENABLED && (
               <>
                 {/* Shipping Address */}

@@ -85,13 +85,13 @@ const CartItem = ({
       {...rest}
     >
       <div className="flex flex-row py-4 space-x-4 ">
-        <div className="relative z-0 w-16 overflow-hidden cursor-pointer ">
+        <div className="relative z-0 w-16 overflow-hidden cursor-pointer sm:w-1/4 ">
           <Link href={`/product/${item.path}`}>
             <a>
               <Image
                 onClick={() => closeSidebarIfPresent()}
-                width={100}
-                height={100}
+                width={150}
+                height={150}
                 src={item.variant.image!.url}
                 alt={item.variant.image!.altText}
                 objectFit="contain"
