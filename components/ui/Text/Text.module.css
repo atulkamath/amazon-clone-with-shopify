@@ -7,7 +7,7 @@
 }
 
 .pageHeading {
-  @apply pt-1 pb-4 text-2xl font-bold leading-7 tracking-wide;
+  @apply pt-1 pb-4 text-2xl font-bold leading-7 tracking-wide sm:font-semibold;
 }
 
 .sectionHeading {
