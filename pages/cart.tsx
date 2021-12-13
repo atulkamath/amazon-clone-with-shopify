@@ -43,7 +43,7 @@ export default function Cart() {
   return (
     <div className="sm:bg-accent-1">
       <div className="grid w-full mx-auto lg:grid-cols-12 max-w-7xl ">
-        <div className="order-last lg:col-span-8 sm:order-none">
+        <div className="order-last lg:col-span-8 sm:order-none sm:bg-white ">
           {isLoading || isEmpty ? (
             <div className="flex flex-col items-center justify-center flex-1 px-12 py-24 ">
               <span className="flex items-center justify-center w-16 h-16 p-12 border border-dashed rounded-lg border-secondary bg-primary text-primary">

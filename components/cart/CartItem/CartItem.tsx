@@ -84,7 +84,7 @@ const CartItem = ({
       })}
       {...rest}
     >
-      <div className="flex flex-row py-4 space-x-4">
+      <div className="flex flex-row py-4 space-x-4 ">
         <div className="relative z-0 w-16 overflow-hidden cursor-pointer ">
           <Link href={`/product/${item.path}`}>
             <a>

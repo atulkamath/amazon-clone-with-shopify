@@ -24,7 +24,7 @@ const Quantity: FC<QuantityProps> = ({
       <button className={s.actions} onClick={handleRemove}>
         <Cross width={20} height={20} />
       </button>
-      <label className="w-full border-accent-2 border ml-2">
+      <label className="w-full ml-2 border border-accent-2">
         <input
           className={s.input}
           onChange={(e) =>
