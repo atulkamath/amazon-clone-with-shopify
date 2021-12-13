@@ -25,8 +25,57 @@
     & > *:nth-child(6n + 5) {
       @apply bg-amazon-orange;
     }
-    & > *:nth-child(6n + 6) {
-      @apply bg-amazon-orange;
+  }
+}
+
+.layoutB {
+  @apply p-4;
+
+  &.filled {
+    @apply bg-white;
+    & > *:nth-child(6n + 1) {
+      @apply bg-transparent;
+    }
+
+    & > *:nth-child(6n + 2) {
+      background-color: lightblue;
+    }
+
+    & > *:nth-child(6n + 3) {
+      background-color: lightblue;
+    }
+
+    & > *:nth-child(6n + 4) {
+      background-color: lightblue;
+    }
+    & > *:nth-child(6n + 5) {
+      background-color: lightblue;
+    }
+  }
+}
+
+.layoutC {
+  @apply p-4;
+
+  &.filled {
+    @apply bg-white;
+    & > *:nth-child(6n + 1) {
+      @apply bg-transparent;
+    }
+
+    & > *:nth-child(6n + 2) {
+      background-color: lightpink;
+    }
+
+    & > *:nth-child(6n + 3) {
+      background-color: lightpink;
+    }
+
+    & > *:nth-child(6n + 4) {
+      background-color: lightpink;
+    }
+    & > *:nth-child(6n + 5) {
+      background-color: lightpink;
     }
   }
 }

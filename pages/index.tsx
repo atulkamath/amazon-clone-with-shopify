@@ -66,6 +66,7 @@ export default function Home({
         variant="filled"
         className="grid grid-cols-2 lg:hidden hide-scroll-bar"
         title="Deals on electronics!"
+        layout="B"
       >
         {products.slice(4, 8).map((product: any, _i: number) => (
           <ProductCard variant="slim" key={product.id} product={product} />
@@ -86,6 +87,7 @@ export default function Home({
           title="Latest electronic deals"
           variant="filled"
           className="items-center justify-center hidden grid-cols-2 gap-4 lg:grid hide-scroll-bar "
+          layout="B"
         >
           {products.slice(4, 8).map((product: any, _i: number) => (
             <ProductCard variant="slim" key={product.id} product={product} />
@@ -94,7 +96,8 @@ export default function Home({
         <Grid
           title="Latest game deals"
           variant="filled"
-          className="items-center justify-center hidden grid-cols-2 gap-4 lg:grid hide-scroll-bar "
+          className="items-center justify-center hidden grid-cols-2 gap-4 lg:grid hide-scroll-bar"
+          layout="C"
         >
           {products.slice(8, 12).map((product: any, _i: number) => (
             <ProductCard variant="slim" key={product.id} product={product} />
@@ -119,13 +122,6 @@ export default function Home({
           <ProductCard key={product.id} product={product} />
         ))}
       </Grid>
-      {/* </Grid> 
-       <HomeAllProductsGrid
-        newestProducts={products}
-        categories={categories}
-        brands={brands}
-      />
-      */}
     </>
   )
 }
