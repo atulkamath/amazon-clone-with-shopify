@@ -40,9 +40,7 @@ const CartItem = ({
     baseAmount: item.variant.listPrice * item.quantity,
     currencyCode,
   })
-  {
-    console.log(price)
-  }
+
   const handleChange = async ({
     target: { value },
   }: ChangeEvent<HTMLInputElement>) => {
