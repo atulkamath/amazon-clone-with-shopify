@@ -106,7 +106,19 @@ export default function Home({
           layout="B"
         >
           {products.slice(4, 8).map((product: any, _i: number) => (
-            <ProductCard variant="slim" key={product.id} product={product} />
+            <Link passHref key={product.id} href={`/search/${product.slug}`}>
+              <div className="flex flex-col cursor-pointer">
+                <Image
+                  key=""
+                  width={200}
+                  height={200}
+                  objectFit="contain"
+                  src={product.images[0].url}
+                  alt=""
+                />
+                <span className="bg-white">{product.name}</span>
+              </div>
+            </Link>
           ))}
         </Grid>
         <Grid
