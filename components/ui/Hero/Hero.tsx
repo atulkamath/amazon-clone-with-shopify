@@ -9,7 +9,6 @@ const smallImage = [
   { img: 'https://m.media-amazon.com/images/I/71Fia1VO1PL._SR1236,1080_.jpg' },
   { img: 'https://m.media-amazon.com/images/I/714I3Yg0C3L._SR1236,1080_.jpg' },
   { img: 'https://m.media-amazon.com/images/I/61Jhrv+qH-L._SR1236,1080_.jpg' },
-  { img: 'https://m.media-amazon.com/images/I/71DmEEOsz9L._SR1236,1080_.jpg' },
 ]
 
 const Hero: FC<HeroProps> = () => {

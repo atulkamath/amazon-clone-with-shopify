@@ -11,7 +11,7 @@ const data = [
   {
     name: 'Fashion',
     image: 'https://m.media-amazon.com/images/I/11HhMZTlTJL._AC_SR160,140_.jpg',
-    link: '/search',
+    link: '/clothing',
   },
   {
     name: 'Mobiles',
@@ -44,7 +44,7 @@ const RoundCarousel = () => {
   return (
     <div className="flex items-start p-4 space-x-4 overflow-x-scroll list-none border-b-4 lg:hidden hide-scroll-bar ">
       {data.map((item, index) => (
-        <Link key={index} href={item.link}>
+        <Link key={index} href={`/search${item.link}`}>
           <li
             className="flex flex-col items-center text-sm font-light rounded-full "
             key={index}
