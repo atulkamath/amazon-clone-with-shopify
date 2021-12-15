@@ -134,7 +134,7 @@ export default function Home({
         Last chance deals | Up to 40% off
       </h1>
       <Grid className="flex p-4 -ml-4 space-x-4 overflow-x-scroll border-none lg:-ml-8 bg-accent-2 hide-scroll-bar">
-        {products.slice(8, 13).map((product: any, _i: number) => (
+        {products.slice(8, 16).map((product: any, _i: number) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </Grid>

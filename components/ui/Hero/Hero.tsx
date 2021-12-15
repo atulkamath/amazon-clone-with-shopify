@@ -38,9 +38,8 @@ const Hero: FC<HeroProps> = () => {
   return (
     <div className="bg-accent-1 ">
       <LargeCarousel />
-      <div className="overflow-hidden sm:hidden">
-        {/* {smallImage.map((data,index)=>( */}
-        <Link passHref href={`/search${smallImage[currentIndex].link}`}>
+      <Link passHref href={`/search${smallImage[currentIndex].link}`}>
+        <div className="overflow-hidden sm:hidden">
           <Image
             width={400}
             height={350}
@@ -49,8 +48,8 @@ const Hero: FC<HeroProps> = () => {
             alt="hero image"
             priority
           />
-        </Link>
-      </div>
+        </div>
+      </Link>
       <TileCarousel />
       <section className="-mb-4 lg:hidden">
         <Image

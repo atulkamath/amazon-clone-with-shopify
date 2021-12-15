@@ -3,10 +3,10 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 const LargeCarousel = () => {
   const largeImage = [
-    'https://m.media-amazon.com/images/I/71gs3Tx7IPL._SX3000_.jpg',
     'https://m.media-amazon.com/images/I/71nw3LjRK3L._SX3000_.jpg',
     'https://m.media-amazon.com/images/I/71HZnvHVBYL._SX3000_.jpg',
     'https://m.media-amazon.com/images/I/71JS6GUuXoL._SX3000_.jpg',
+    'https://m.media-amazon.com/images/I/71gs3Tx7IPL._SX3000_.jpg',
   ]
 
   const [firstIndex, setFirstIndex] = useState(0)
