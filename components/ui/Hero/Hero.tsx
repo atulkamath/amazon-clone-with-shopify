@@ -9,7 +9,7 @@ interface HeroProps {}
 const smallImage = [
   {
     img: 'https://m.media-amazon.com/images/I/71Fia1VO1PL._SR1236,1080_.jpg',
-    link: '/search',
+    link: '/',
   },
   {
     img: 'https://m.media-amazon.com/images/I/714I3Yg0C3L._SR1236,1080_.jpg',
@@ -40,7 +40,7 @@ const Hero: FC<HeroProps> = () => {
       <LargeCarousel />
       <div className="overflow-hidden sm:hidden">
         {/* {smallImage.map((data,index)=>( */}
-        <Link href={`/search/${smallImage[currentIndex].link}`}>
+        <Link passHref href={`/search${smallImage[currentIndex].link}`}>
           <Image
             width={400}
             height={350}

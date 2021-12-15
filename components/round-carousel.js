@@ -6,7 +6,7 @@ const data = [
   {
     name: 'Deals',
     image: 'https://m.media-amazon.com/images/I/210q9h5bVML._AC_SR160,140_.png',
-    link: '/search',
+    link: '/',
   },
   {
     name: 'Fashion',
@@ -26,17 +26,17 @@ const data = [
   {
     name: 'Home',
     image: 'https://m.media-amazon.com/images/I/11+uMy5tz1L._AC_SR160,140_.jpg',
-    link: '/search',
+    link: '/',
   },
   {
     name: 'Beauty',
     image: 'https://m.media-amazon.com/images/I/01IPchFEXyL._AC_SR160,140_.jpg',
-    link: '/search',
+    link: '/',
   },
   {
     name: 'Kitchen',
     image: 'https://m.media-amazon.com/images/I/11L6mokpNqL._AC_SR160,140_.jpg',
-    link: '/search',
+    link: '/',
   },
 ]
 
@@ -44,7 +44,7 @@ const RoundCarousel = () => {
   return (
     <div className="flex items-start p-4 space-x-4 overflow-x-scroll list-none border-b-4 lg:hidden hide-scroll-bar ">
       {data.map((item, index) => (
-        <Link key={index} href={`/search${item.link}`}>
+        <Link key={index} passHref href={`/search${item.link}`}>
           <li
             className="flex flex-col items-center text-sm font-light rounded-full "
             key={index}

@@ -72,7 +72,7 @@ export default function Home({
         layout="B"
       >
         {products.slice(4, 8).map((product: any, _i: number) => (
-          <Link key={product.id} href={`/search/${product.slug}`}>
+          <Link passHref key={product.id} href={`/search/${product.slug}`}>
             <div className="flex flex-col">
               <Image
                 key=""
