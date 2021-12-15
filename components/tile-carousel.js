@@ -35,7 +35,7 @@ const tileData = [
 
 const TileCarousel = () => {
   return (
-    <div className="flex pl-2 -mt-12 space-x-4 overflow-x-scroll list-none shadow-xl md:m-4 md:-mt-72 md:mb-24 bg-accent-2">
+    <div className="flex pl-2 -mt-12 space-x-4 overflow-x-scroll list-none shadow-xl cursor-pointer md:m-4 md:-mt-72 md:mb-24 bg-accent-2">
       <div className="z-10 flex flex-col p-3 bg-white rounded whitespace-nowrap hide-scroll-bar">
         <h1 className="text-xl font-bold">Welcome</h1>
         <h1 className="text-base">Sign in for the best experience</h1>
