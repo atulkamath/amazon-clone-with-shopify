@@ -65,8 +65,8 @@ export default function Search({ categories, brands }: SearchPropsType) {
 
   return (
     <Container>
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mt-3 mb-20">
-        <div className="col-span-8 lg:col-span-2 order-1 lg:order-none">
+      <div className="grid grid-cols-1 gap-4 p-4 mt-3 mb-20 lg:grid-cols-12">
+        <div className="order-1 col-span-8 lg:col-span-2 lg:order-none">
           {/* Categories */}
           <div className="relative inline-block w-full">
             <div className="lg:hidden">
@@ -74,7 +74,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                 <button
                   type="button"
                   onClick={(e) => handleClick(e, 'categories')}
-                  className="flex justify-between w-full rounded-sm border border-accent-3 px-4 py-3 bg-accent-0 text-sm leading-5 font-medium text-accent-4 hover:text-accent-5 focus:outline-none focus:border-blue-300 focus:shadow-outline-normal active:bg-accent-1 active:text-accent-8 transition ease-in-out duration-150"
+                  className="flex justify-between w-full px-4 py-3 text-sm font-medium leading-5 transition duration-150 ease-in-out border rounded-sm border-accent-3 bg-accent-0 text-accent-4 hover:text-accent-5 focus:outline-none focus:border-blue-300 focus:shadow-outline-normal active:bg-accent-1 active:text-accent-8"
                   id="options-menu"
                   aria-haspopup="true"
                   aria-expanded="true"
@@ -83,7 +83,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                     ? `Category: ${activeCategory?.name}`
                     : 'All Categories'}
                   <svg
-                    className="-mr-1 ml-2 h-5 w-5"
+                    className="w-5 h-5 ml-2 -mr-1"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
@@ -104,7 +104,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                   : ''
               }`}
             >
-              <div className="rounded-sm bg-accent-0 shadow-xs lg:bg-none lg:shadow-none">
+              <div className="rounded-sm shadow-xs bg-accent-0 lg:bg-none lg:shadow-none">
                 <div
                   role="menu"
                   aria-orientation="vertical"
@@ -167,12 +167,12 @@ export default function Search({ categories, brands }: SearchPropsType) {
 
           {/* Designs */}
           <div className="relative inline-block w-full">
-            <div className="lg:hidden mt-3">
+            <div className="mt-3 lg:hidden">
               <span className="rounded-md shadow-sm">
                 <button
                   type="button"
                   onClick={(e) => handleClick(e, 'brands')}
-                  className="flex justify-between w-full rounded-sm border border-accent-3 px-4 py-3 bg-accent-0 text-sm leading-5 font-medium text-accent-8 hover:text-accent-5 focus:outline-none focus:border-blue-300 focus:shadow-outline-normal active:bg-accent-1 active:text-accent-8 transition ease-in-out duration-150"
+                  className="flex justify-between w-full px-4 py-3 text-sm font-medium leading-5 transition duration-150 ease-in-out border rounded-sm border-accent-3 bg-accent-0 text-accent-8 hover:text-accent-5 focus:outline-none focus:border-blue-300 focus:shadow-outline-normal active:bg-accent-1 active:text-accent-8"
                   id="options-menu"
                   aria-haspopup="true"
                   aria-expanded="true"
@@ -181,7 +181,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                     ? `Design: ${activeBrand?.name}`
                     : 'All Designs'}
                   <svg
-                    className="-mr-1 ml-2 h-5 w-5"
+                    className="w-5 h-5 ml-2 -mr-1"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
@@ -202,7 +202,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                   : ''
               }`}
             >
-              <div className="rounded-sm bg-accent-0 shadow-xs lg:bg-none lg:shadow-none">
+              <div className="rounded-sm shadow-xs bg-accent-0 lg:bg-none lg:shadow-none">
                 <div
                   role="menu"
                   aria-orientation="vertical"
@@ -268,9 +268,9 @@ export default function Search({ categories, brands }: SearchPropsType) {
           </div>
         </div>
         {/* Products */}
-        <div className="col-span-8 order-3 lg:order-none">
+        <div className="order-3 col-span-8 lg:order-none">
           {(q || activeCategory || activeBrand) && (
-            <div className="mb-12 transition ease-in duration-75">
+            <div className="mb-12 transition duration-75 ease-in">
               {data ? (
                 <>
                   <span
@@ -339,21 +339,21 @@ export default function Search({ categories, brands }: SearchPropsType) {
         </div>
 
         {/* Sort */}
-        <div className="col-span-8 lg:col-span-2 order-2 lg:order-none">
+        <div className="order-2 col-span-8 lg:col-span-2 lg:order-none">
           <div className="relative inline-block w-full">
             <div className="lg:hidden">
               <span className="rounded-md shadow-sm">
                 <button
                   type="button"
                   onClick={(e) => handleClick(e, 'sort')}
-                  className="flex justify-between w-full rounded-sm border border-accent-3 px-4 py-3 bg-accent-0 text-sm leading-5 font-medium text-accent-4 hover:text-accent-5 focus:outline-none focus:border-blue-300 focus:shadow-outline-normal active:bg-accent-1 active:text-accent-8 transition ease-in-out duration-150"
+                  className="flex justify-between w-full px-4 py-3 text-sm font-medium leading-5 transition duration-150 ease-in-out border rounded-sm border-accent-3 bg-accent-0 text-accent-4 hover:text-accent-5 focus:outline-none focus:border-blue-300 focus:shadow-outline-normal active:bg-accent-1 active:text-accent-8"
                   id="options-menu"
                   aria-haspopup="true"
                   aria-expanded="true"
                 >
                   {sort ? SORT[sort as keyof typeof SORT] : 'Relevance'}
                   <svg
-                    className="-mr-1 ml-2 h-5 w-5"
+                    className="w-5 h-5 ml-2 -mr-1"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
@@ -372,7 +372,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                 activeFilter !== 'sort' || toggleFilter !== true ? 'hidden' : ''
               }`}
             >
-              <div className="rounded-sm bg-accent-0 shadow-xs lg:bg-none lg:shadow-none">
+              <div className="rounded-sm shadow-xs bg-accent-0 lg:bg-none lg:shadow-none">
                 <div
                   role="menu"
                   aria-orientation="vertical"

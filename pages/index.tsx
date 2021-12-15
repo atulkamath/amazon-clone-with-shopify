@@ -6,6 +6,8 @@ import { Grid, Hero, Marquee } from '@components/ui'
 import commerce from '@lib/api/commerce'
 // import HomeAllProductsGrid from '@components/common/HomeAllProductsGrid'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export async function getStaticProps({
   preview,
@@ -62,6 +64,7 @@ export default function Home({
           <ProductCard variant="slim" key={product.id} product={product} />
         ))}
       </Grid>
+
       <Grid
         variant="filled"
         className="grid grid-cols-2 lg:hidden hide-scroll-bar"
@@ -69,7 +72,20 @@ export default function Home({
         layout="B"
       >
         {products.slice(4, 8).map((product: any, _i: number) => (
-          <ProductCard variant="slim" key={product.id} product={product} />
+          <Link passHref key={product.id} href={`/search/${product.slug}`}>
+            <div className="flex flex-col">
+              <Image
+                key=""
+                width={200}
+                height={200}
+                objectFit="contain"
+                src={product.images[0].url}
+                alt=""
+              />
+              <span className="bg-white">{product.name}</span>
+            </div>
+          </Link>
+          // <ProductCard variant="slim" key={product.id} product={product} />
         ))}
       </Grid>
 
@@ -117,8 +133,8 @@ export default function Home({
       <h1 className="px-4 pt-4 text-xl bg-accent-2 whitespace-nowrap">
         Last chance deals | Up to 40% off
       </h1>
-      <Grid className="flex p-4 -ml-4 space-x-4 overflow-x-scroll border-none lg:-ml-8 bg-accent-2 hide-scroll-bar ">
-        {products.slice(6, 13).map((product: any, _i: number) => (
+      <Grid className="flex p-4 -ml-4 space-x-4 overflow-x-scroll border-none lg:-ml-8 bg-accent-2 hide-scroll-bar">
+        {products.slice(8, 16).map((product: any, _i: number) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </Grid>
