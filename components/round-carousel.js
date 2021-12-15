@@ -16,12 +16,12 @@ const data = [
   {
     name: 'Mobiles',
     image: 'https://m.media-amazon.com/images/I/11qytD-YlAL._AC_SR160,140_.jpg',
-    link: '/search',
+    link: '/mobiles',
   },
   {
     name: 'Supermarket',
     image: 'https://m.media-amazon.com/images/I/11eIZBrxiEL._AC_SR160,140_.jpg',
-    link: '/search',
+    link: '/supermarket',
   },
   {
     name: 'Home',
