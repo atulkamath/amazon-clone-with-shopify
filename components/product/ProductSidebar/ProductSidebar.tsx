@@ -59,7 +59,8 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
         selectedOptions={selectedOptions}
         setSelectedOptions={setSelectedOptions}
       />
-      <div className="flex p-4 font-medium lg:mt-4 ">
+
+      <div className="flex p-4 font-medium lg:mt-4">
         Price:
         <div className="flex flex-col ml-2 text-lg whitespace-nowrap text-red">
           <span>

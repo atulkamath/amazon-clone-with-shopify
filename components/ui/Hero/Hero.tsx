@@ -2,14 +2,23 @@ import LargeCarousel from '@components/large-carousel'
 import TileCarousel from '@components/tile-carousel'
 import Image from 'next/image'
 import React, { FC, useEffect, useState } from 'react'
+import Link from 'next/link'
 
 interface HeroProps {}
 
 const smallImage = [
-  'https://m.media-amazon.com/images/I/71Fia1VO1PL._SR1236,1080_.jpg',
-  'https://m.media-amazon.com/images/I/714I3Yg0C3L._SR1236,1080_.jpg',
-  'https://m.media-amazon.com/images/I/61Jhrv+qH-L._SR1236,1080_.jpg',
-  'https://m.media-amazon.com/images/I/71DmEEOsz9L._SR1236,1080_.jpg',
+  {
+    img: 'https://m.media-amazon.com/images/I/71Fia1VO1PL._SR1236,1080_.jpg',
+    link: '/',
+  },
+  {
+    img: 'https://m.media-amazon.com/images/I/714I3Yg0C3L._SR1236,1080_.jpg',
+    link: '/laptops',
+  },
+  {
+    img: 'https://m.media-amazon.com/images/I/61Jhrv+qH-L._SR1236,1080_.jpg',
+    link: '/appliances',
+  },
 ]
 
 const Hero: FC<HeroProps> = () => {
@@ -29,16 +38,18 @@ const Hero: FC<HeroProps> = () => {
   return (
     <div className="bg-accent-1 ">
       <LargeCarousel />
-      <div className="overflow-hidden sm:hidden">
-        <Image
-          width={400}
-          height={350}
-          src={smallImage[currentIndex]}
-          layout={'responsive'}
-          alt="hero image"
-          priority
-        />
-      </div>
+      <Link passHref href={`/search${smallImage[currentIndex].link}`}>
+        <div className="overflow-hidden sm:hidden">
+          <Image
+            width={400}
+            height={350}
+            src={smallImage[currentIndex].img}
+            layout={'responsive'}
+            alt="hero image"
+            priority
+          />
+        </div>
+      </Link>
       <TileCarousel />
       <section className="-mb-4 lg:hidden">
         <Image

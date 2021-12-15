@@ -51,6 +51,7 @@ const ProductCard: FC<Props> = ({
               {/* <h1 className="text-2xl">{title}</h1>
               <span>{product.name}</span> */}
             </div>
+
             {product?.images && (
               <div>
                 <Image
@@ -131,10 +132,7 @@ const ProductCard: FC<Props> = ({
                     objectFit="contain"
                     {...imgProps}
                   />
-                  <ProductTag
-                    name={product.name}
-                    price={`${price} ${product.price?.currencyCode}`}
-                  />
+                  <ProductTag name={product.name} price={`${price} `} />
                   {/* <h2>{`${price} ${product.price?.currencyCode}`}</h2> */}
                 </div>
               )}
