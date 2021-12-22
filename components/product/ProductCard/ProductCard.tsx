@@ -140,14 +140,16 @@ const ProductCard: FC<Props> = ({
                       <h3 className={s.name}>
                         <span>{product.name}</span>
                       </h3>
-                      <div className="flex text-xs lg:hidden">
+                      <div className="flex items-center text-xs sm:-ml-2 sm:my-0.5">
                         <Rating value={4} />
-                        <span className="m-1.5 mt-0.5 ">(36)</span>
+                        <span className="m-1.5 mt-0.5 sm:m-1 sm:mt-1.5 ">
+                          (36)
+                        </span>
                       </div>
-
-                      {/* 10% discount with Citibank (code CB10DEC) */}
-
                       <div className={s.price}>{`${price} `}</div>
+                      <p className="w-40 text-xs whitespace-normal text-accent-4 sm:w-full sm:text-sm">
+                        10% discount with Citibank (code CB10DEC)
+                      </p>
                     </div>
                   )}
                 </div>

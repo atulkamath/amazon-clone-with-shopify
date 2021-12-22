@@ -34,13 +34,13 @@
 }
 
 .productImageContainer .header {
-  @apply flex flex-col pl-2 pr-8 border-0 sm:items-center;
+  @apply flex flex-col pl-2 pr-8 border-0;
 }
 .productImageContainer .header .name {
-  @apply pt-2 -mt-1 text-base font-semibold leading-7 sm:font-bold;
+  @apply pt-2 -mt-1 text-base font-semibold leading-7 sm:font-medium;
 }
 .productImageContainer .header .price {
-  @apply text-sm font-semibold;
+  @apply text-sm font-semibold sm:my-1;
 }
 /* Variant Simple */
 .simple .header {
