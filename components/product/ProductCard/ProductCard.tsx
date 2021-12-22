@@ -7,13 +7,14 @@ import Image, { ImageProps } from 'next/image'
 import WishlistButton from '@components/wishlist/WishlistButton'
 import usePrice from '@framework/product/use-price'
 import ProductTag from '../ProductTag'
+import { Rating } from '@components/ui'
 
 interface Props {
   className?: string
   product: Product
   noNameTag?: boolean
   imgProps?: Omit<ImageProps, 'src' | 'layout' | 'placeholder' | 'blurDataURL'>
-  variant?: 'default' | 'slim' | 'simple'
+  variant?: 'default' | 'slim' | 'simple' | 'category'
   title?: string
   no?: number
 }
@@ -37,7 +38,11 @@ const ProductCard: FC<Props> = ({
 
   const rootClassName = cn(
     s.root,
-    { [s.slim]: variant === 'slim', [s.simple]: variant === 'simple' },
+    {
+      [s.slim]: variant === 'slim',
+      [s.simple]: variant === 'simple',
+      [s.category]: variant === 'category',
+    },
     className,
     no === 0 ? '-ml-4' : null
   )
@@ -83,7 +88,7 @@ const ProductCard: FC<Props> = ({
             )}
             <div className={s.imageContainer}>
               {product?.images && (
-                <div>
+                <div className="">
                   <Image
                     alt={product.name || 'Product Image'}
                     className={s.productImage}
@@ -100,6 +105,51 @@ const ProductCard: FC<Props> = ({
                         <span>{product.name}</span>
                       </h3>
                       <div className={s.price}>{`${price} `}</div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          </>
+        )}
+
+        {variant === 'category' && (
+          <>
+            {process.env.COMMERCE_WISHLIST_ENABLED && (
+              <WishlistButton
+                className={s.wishlistButton}
+                productId={product.id}
+                variant={product.variants[0]}
+              />
+            )}
+            <div className={s.productImageContainer}>
+              {product?.images && (
+                <div className="">
+                  <Image
+                    alt={product.name || 'Product Image'}
+                    className={s.containerProductImage}
+                    src={product.images[0]?.url || placeholderImg}
+                    height={540}
+                    width={540}
+                    quality="85"
+                    objectFit="contain"
+                    {...imgProps}
+                  />
+                  {!noNameTag && (
+                    <div className={s.header}>
+                      <h3 className={s.name}>
+                        <span>{product.name}</span>
+                      </h3>
+                      <div className="flex items-center  text-xs sm:-ml-2 sm:my-0.5">
+                        <Rating value={4} />
+                        <span className=" mt-0.5 ml-1 sm:m-1 sm:mt-1.5 ">
+                          (36)
+                        </span>
+                      </div>
+                      <div className={s.price}>{`${price} `}</div>
+                      <p className="w-40 text-xs whitespace-normal text-accent-4 sm:w-full sm:text-sm">
+                        10% discount with Citibank (code CB10DEC)
+                      </p>
                     </div>
                   )}
                 </div>
