@@ -10,9 +10,9 @@ import Menu from '@components/menu'
 
 const navData = [
   'Todays Deals',
+  'Shop By Category',
   'Best Sellers',
   'Electronics',
-  'Shop By Category',
   'Prime',
   'New Releases',
   'Home',
@@ -65,7 +65,7 @@ const Navbar: FC<NavbarProps> = ({ links }) => (
           </nav> */}
 
         {process.env.COMMERCE_SEARCH_ENABLED && (
-          <div className="items-end flex-1 hidden lg:flex">
+          <div className="items-center flex-1 hidden lg:flex">
             <Searchbar />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -85,15 +85,16 @@ const Navbar: FC<NavbarProps> = ({ links }) => (
       <div className="px-5 lg:hidden md:px-0">
         <Searchbar />
       </div>
-
-      <div className="flex p-5 py-3 space-x-4 overflow-x-scroll font-semibold text-white list-none hide-scroll-bar lg:px-6 lg:p-2 lg:bg-amazon-light-blue whitespace-nowrap">
-        {/* <Menu /> */}
-        {navData.map((data, id) => (
-          <a href="#" key={id}>
-            {data}
-          </a>
-        ))}
-      </div>
+      <Link passHref href="/search">
+        <div className="flex p-5 py-3 space-x-4 overflow-x-scroll font-semibold text-white list-none hide-scroll-bar lg:px-6 lg:p-2 lg:bg-amazon-light-blue whitespace-nowrap">
+          {/* <Menu /> */}
+          {navData.map((data, id) => (
+            <a href="#" key={id}>
+              {data}
+            </a>
+          ))}
+        </div>
+      </Link>
 
       <div className="flex items-center w-full p-2 px-5 text-sm text-white lg:hidden bg-amazon-light-blue">
         <LocationMarkerIcon className="w-6 h-6 mr-2" />
