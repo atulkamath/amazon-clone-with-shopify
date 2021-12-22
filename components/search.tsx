@@ -318,7 +318,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                 <ProductCard
                   variant="simple"
                   key={product.path}
-                  className="animated fadeIn"
+                  className=" animated fadeIn"
                   product={product}
                   imgProps={{
                     width: 480,

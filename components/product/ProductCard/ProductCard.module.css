@@ -1,7 +1,7 @@
 .root:hover {
   cursor: pointer;
   & .productImage {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 }
 
@@ -10,7 +10,7 @@
 }
 
 .imageContainer > div {
-  min-width: 100%;
+  @apply flex justify-between min-w-full sm:block;
 }
 
 .imageContainer .productImage {
