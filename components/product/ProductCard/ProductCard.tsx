@@ -140,9 +140,9 @@ const ProductCard: FC<Props> = ({
                       <h3 className={s.name}>
                         <span>{product.name}</span>
                       </h3>
-                      <div className="flex items-center text-xs sm:-ml-2 sm:my-0.5">
+                      <div className="flex items-center  text-xs sm:-ml-2 sm:my-0.5">
                         <Rating value={4} />
-                        <span className="m-1.5 mt-0.5 sm:m-1 sm:mt-1.5 ">
+                        <span className=" mt-0.5 ml-1 sm:m-1 sm:mt-1.5 ">
                           (36)
                         </span>
                       </div>
