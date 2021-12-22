@@ -321,8 +321,8 @@ export default function Search({ categories, brands }: SearchPropsType) {
                   className=" animated fadeIn"
                   product={product}
                   imgProps={{
-                    width: 480,
-                    height: 480,
+                    width: 300,
+                    height: 300,
                   }}
                 />
               ))}
