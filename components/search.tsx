@@ -270,7 +270,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
         {/* Products */}
         <div className="order-3 col-span-8 lg:order-none">
           {(q || activeCategory || activeBrand) && (
-            <div className="mb-12 transition duration-75 ease-in">
+            <div className="mb-4 ml-1 font-bold transition duration-75 ease-in ">
               {data ? (
                 <>
                   <span

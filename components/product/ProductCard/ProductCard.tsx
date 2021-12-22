@@ -7,6 +7,7 @@ import Image, { ImageProps } from 'next/image'
 import WishlistButton from '@components/wishlist/WishlistButton'
 import usePrice from '@framework/product/use-price'
 import ProductTag from '../ProductTag'
+import { Rating } from '@components/ui'
 
 interface Props {
   className?: string
@@ -139,6 +140,13 @@ const ProductCard: FC<Props> = ({
                       <h3 className={s.name}>
                         <span>{product.name}</span>
                       </h3>
+                      <div className="flex text-xs lg:hidden">
+                        <Rating value={4} />
+                        <span className="m-1.5 mt-0.5 ">(36)</span>
+                      </div>
+
+                      {/* 10% discount with Citibank (code CB10DEC) */}
+
                       <div className={s.price}>{`${price} `}</div>
                     </div>
                   )}
