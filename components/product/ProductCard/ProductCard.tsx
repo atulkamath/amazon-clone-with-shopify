@@ -13,7 +13,7 @@ interface Props {
   product: Product
   noNameTag?: boolean
   imgProps?: Omit<ImageProps, 'src' | 'layout' | 'placeholder' | 'blurDataURL'>
-  variant?: 'default' | 'slim' | 'simple'
+  variant?: 'default' | 'slim' | 'simple' | 'category'
   title?: string
   no?: number
 }
@@ -37,7 +37,11 @@ const ProductCard: FC<Props> = ({
 
   const rootClassName = cn(
     s.root,
-    { [s.slim]: variant === 'slim', [s.simple]: variant === 'simple' },
+    {
+      [s.slim]: variant === 'slim',
+      [s.simple]: variant === 'simple',
+      [s.category]: variant === 'category',
+    },
     className,
     no === 0 ? '-ml-4' : null
   )
@@ -87,6 +91,42 @@ const ProductCard: FC<Props> = ({
                   <Image
                     alt={product.name || 'Product Image'}
                     className={s.productImage}
+                    src={product.images[0]?.url || placeholderImg}
+                    height={540}
+                    width={540}
+                    quality="85"
+                    objectFit="contain"
+                    {...imgProps}
+                  />
+                  {!noNameTag && (
+                    <div className={s.header}>
+                      <h3 className={s.name}>
+                        <span>{product.name}</span>
+                      </h3>
+                      <div className={s.price}>{`${price} `}</div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          </>
+        )}
+
+        {variant === 'category' && (
+          <>
+            {process.env.COMMERCE_WISHLIST_ENABLED && (
+              <WishlistButton
+                className={s.wishlistButton}
+                productId={product.id}
+                variant={product.variants[0]}
+              />
+            )}
+            <div className={s.productImageContainer}>
+              {product?.images && (
+                <div className="">
+                  <Image
+                    alt={product.name || 'Product Image'}
+                    className={s.containerProductImage}
                     src={product.images[0]?.url || placeholderImg}
                     height={540}
                     width={540}
