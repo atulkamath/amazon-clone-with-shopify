@@ -270,7 +270,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
         {/* Products */}
         <div className="order-3 col-span-8 lg:order-none">
           {(q || activeCategory || activeBrand) && (
-            <div className="mb-12 transition duration-75 ease-in">
+            <div className="mb-4 ml-1 font-bold transition duration-75 ease-in ">
               {data ? (
                 <>
                   <span
@@ -316,13 +316,13 @@ export default function Search({ categories, brands }: SearchPropsType) {
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {data.products.map((product: Product) => (
                 <ProductCard
-                  variant="simple"
+                  variant="category"
                   key={product.path}
-                  className="animated fadeIn"
+                  className=" animated fadeIn"
                   product={product}
                   imgProps={{
-                    width: 480,
-                    height: 480,
+                    width: 300,
+                    height: 300,
                   }}
                 />
               ))}
