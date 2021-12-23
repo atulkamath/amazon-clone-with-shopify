@@ -9,6 +9,7 @@ import { Moon, Sun } from '@components/icons'
 import { useUI } from '@components/ui/context'
 import ClickOutside from '@lib/click-outside'
 import useLogout from '@framework/auth/use-logout'
+import useCustomer from '@framework/customer/use-customer'
 
 import {
   disableBodyScroll,
@@ -38,11 +39,11 @@ const LINKS = [
 const DropdownMenu: FC<DropdownMenuProps> = ({ open = false }) => {
   const logout = useLogout()
   const { pathname } = useRouter()
-  const { theme, setTheme } = useTheme()
+
   const [display, setDisplay] = useState(false)
   const { closeSidebarIfPresent } = useUI()
   const ref = useRef() as React.MutableRefObject<HTMLUListElement>
-
+  const { data: customer } = useCustomer()
   useEffect(() => {
     if (ref.current) {
       if (display) {
@@ -60,10 +61,12 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ open = false }) => {
     <ClickOutside active={display} onClick={() => setDisplay(false)}>
       <div>
         <button
-          className={s.avatarButton}
+          className="flex items-center lg:items-start lg:flex-col"
           onClick={() => setDisplay(!display)}
           aria-label="Menu"
         >
+          <h3 className="capitalize">Hello, {customer.firstName}</h3>
+          <span className="hidden lg:flex">Your Account</span>
           <Avatar />
         </button>
         {display && (
@@ -87,26 +90,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ open = false }) => {
                 </div>
               </li>
             ))}
-            <li>
-              <a
-                className={cn(s.link, 'justify-between')}
-                onClick={() => {
-                  theme === 'dark' ? setTheme('light') : setTheme('dark')
-                  setDisplay(false)
-                }}
-              >
-                <div>
-                  Theme: <strong>{theme}</strong>{' '}
-                </div>
-                <div className="ml-3">
-                  {theme == 'dark' ? (
-                    <Moon width={20} height={20} />
-                  ) : (
-                    <Sun width="20" height={20} />
-                  )}
-                </div>
-              </a>
-            </li>
+
             <li>
               <a
                 className={cn(s.link, 'border-t border-accent-2 mt-4')}

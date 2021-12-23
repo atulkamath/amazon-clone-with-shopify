@@ -32,7 +32,7 @@
 }
 
 .avatarButton {
-  @apply inline-flex justify-center rounded-full;
+  @apply inline-flex items-center justify-center rounded-full;
 }
 
 .avatarButton:focus {
