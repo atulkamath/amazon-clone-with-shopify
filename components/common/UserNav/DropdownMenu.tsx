@@ -39,7 +39,7 @@ const LINKS = [
 const DropdownMenu: FC<DropdownMenuProps> = ({ open = false }) => {
   const logout = useLogout()
   const { pathname } = useRouter()
-  const { theme, setTheme } = useTheme()
+
   const [display, setDisplay] = useState(false)
   const { closeSidebarIfPresent } = useUI()
   const ref = useRef() as React.MutableRefObject<HTMLUListElement>
@@ -90,26 +90,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ open = false }) => {
                 </div>
               </li>
             ))}
-            <li>
-              <a
-                className={cn(s.link, 'justify-between')}
-                onClick={() => {
-                  theme === 'dark' ? setTheme('light') : setTheme('dark')
-                  setDisplay(false)
-                }}
-              >
-                <div>
-                  Theme: <strong>{theme}</strong>{' '}
-                </div>
-                <div className="ml-3">
-                  {theme == 'dark' ? (
-                    <Moon width={20} height={20} />
-                  ) : (
-                    <Sun width="20" height={20} />
-                  )}
-                </div>
-              </a>
-            </li>
+
             <li>
               <a
                 className={cn(s.link, 'border-t border-accent-2 mt-4')}

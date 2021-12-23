@@ -61,7 +61,7 @@ const LoginView: FC<Props> = () => {
       onSubmit={handleLogin}
       className="flex flex-col justify-between p-3 w-80"
     >
-      <div className="flex justify-center ">
+      <div className="flex justify-center pb-8 ">
         <Logo width="64px" height="64px" />
       </div>
       <div className="flex flex-col space-y-3">
@@ -72,7 +72,7 @@ const LoginView: FC<Props> = () => {
               className="inline font-bold cursor-pointer text-accent-9 hover:underline"
               onClick={() => setModalView('FORGOT_VIEW')}
             >
-              forgot your password?
+              forget your password?
             </a>
           </div>
         )}
