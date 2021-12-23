@@ -29,7 +29,9 @@ const UserNav: FC<Props> = ({ className }) => {
         {process.env.COMMERCE_CUSTOMERAUTH_ENABLED && (
           <li className={s.item}>
             {customer ? (
-              <DropdownMenu />
+              <div className="mr-2 capitalize text-accent-2">
+                <DropdownMenu />
+              </div>
             ) : (
               <button
                 className={s.avatarButton}
@@ -38,7 +40,6 @@ const UserNav: FC<Props> = ({ className }) => {
               >
                 <h3 className="text-white lg:hidden">Sign In</h3>
                 <div className="flex-col items-start hidden text-white lg:flex">
-                  <h3>Hello Sign In</h3>
                   <h3 className="font-bold">Accounts and Lists</h3>
                 </div>
                 <Avatar />
