@@ -43,7 +43,7 @@ const Navbar: FC<NavbarProps> = ({ links }) => (
         <Link href="/">
           {/* className={s.logo} */}
           <a className="pt-2" aria-label="Logo">
-            <Logo />
+            <Logo className="white" />
           </a>
         </Link>
         <div className="items-end justify-center hidden text-white lg:flex">

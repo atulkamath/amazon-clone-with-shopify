@@ -59,20 +59,20 @@ const LoginView: FC<Props> = () => {
   return (
     <form
       onSubmit={handleLogin}
-      className="w-80 flex flex-col justify-between p-3"
+      className="flex flex-col justify-between p-3 w-80"
     >
-      <div className="flex justify-center pb-12 ">
+      <div className="flex justify-center pb-8 ">
         <Logo width="64px" height="64px" />
       </div>
       <div className="flex flex-col space-y-3">
         {message && (
-          <div className="text-red border border-red p-3">
+          <div className="p-3 border text-red border-red">
             {message}. Did you {` `}
             <a
-              className="text-accent-9 inline font-bold hover:underline cursor-pointer"
+              className="inline font-bold cursor-pointer text-accent-9 hover:underline"
               onClick={() => setModalView('FORGOT_VIEW')}
             >
-              forgot your password?
+              forget your password?
             </a>
           </div>
         )}
@@ -87,11 +87,11 @@ const LoginView: FC<Props> = () => {
         >
           Log In
         </Button>
-        <div className="pt-1 text-center text-sm">
+        <div className="pt-1 text-sm text-center">
           <span className="text-accent-7">Don't have an account?</span>
           {` `}
           <a
-            className="text-accent-9 font-bold hover:underline cursor-pointer"
+            className="font-bold cursor-pointer text-accent-9 hover:underline"
             onClick={() => setModalView('SIGNUP_VIEW')}
           >
             Sign Up
