@@ -41,16 +41,16 @@ const UserNav: FC<Props> = ({ className }) => {
                   <h3>Hello Sign In</h3>
                   <h3 className="font-bold">Accounts and Lists</h3>
                 </div>
-                <a
-                  className="flex-col items-start justify-center hidden ml-6 text-white lg:flex"
-                  href="#"
-                >
-                  <h3>Returns</h3>
-                  <h3 className="font-bold">& Orders</h3>
-                </a>
                 <Avatar />
               </button>
             )}
+            <a
+              className="flex-col items-start justify-center hidden ml-6 text-white lg:flex"
+              href="#"
+            >
+              <h3>Returns</h3>
+              <h3 className="font-bold">& Orders</h3>
+            </a>
           </li>
         )}
 
