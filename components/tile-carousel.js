@@ -17,6 +17,14 @@ const tileData = [
     link: '/clothing',
   },
   {
+    name: ' https://m.media-amazon.com/images/I/41zcgAO4k0L._SR270,360_.jpg',
+    link: '/electronics',
+  },
+  {
+    name: 'https://m.media-amazon.com/images/I/51eiFnOS0PL._SR270,360_.jpg',
+    link: '/clothing',
+  },
+  {
     name: 'https://m.media-amazon.com/images/I/516E3tkOPsL._SR270,360_.jpg',
     link: '/',
   },
@@ -28,6 +36,7 @@ const tileData = [
     name: 'https://m.media-amazon.com/images/I/31-1IZQoOqL._SR270,360_.jpg',
     link: '/',
   },
+
   {
     name: 'https://m.media-amazon.com/images/I/51Uuq+j9iqL._SR270,360_.jpg',
     link: '/',
