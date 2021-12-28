@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useUI } from '@components/ui/context'
 import useCustomer from '@framework/customer/use-customer'
+
 const tileData = [
   {
     name: 'https://m.media-amazon.com/images/I/51MQdUhBcTL._SR270,360_.jpg',
@@ -44,8 +45,9 @@ const tileData = [
 ]
 
 const TileCarousel = () => {
-  const { toggleSidebar, closeSidebarIfPresent, openModal } = useUI()
+  const { openModal } = useUI()
   const { data: customer } = useCustomer()
+
   return (
     <div className="flex pl-2 -mt-12 space-x-4 overflow-x-scroll list-none shadow-xl cursor-pointer md:m-4 md:-mt-72 md:mb-24 bg-accent-2">
       {customer ? (
@@ -61,7 +63,6 @@ const TileCarousel = () => {
           >
             Sign in securely
           </button>
-          <a className="text-amazon-light-blue">Create an account</a>
         </div>
       )}
       {tileData.map((item, index) => (
