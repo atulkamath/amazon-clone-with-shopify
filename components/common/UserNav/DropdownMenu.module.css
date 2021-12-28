@@ -1,13 +1,13 @@
 .dropdownMenu {
-  @apply fixed right-0 mt-2 origin-top-right outline-none bg-primary z-40 w-full h-full;
+  @apply fixed right-0 z-40 w-full h-full mt-2 origin-top-right outline-none bg-primary;
 
   @screen lg {
-    @apply absolute top-10 border border-accent-1 shadow-lg w-56 h-auto;
+    @apply absolute w-56 h-auto border shadow-lg top-10 border-accent-1;
   }
 }
 
 .link {
-  @apply text-primary flex cursor-pointer px-6 py-3 flex transition ease-in-out duration-150 leading-6 font-medium items-center;
+  @apply flex items-center px-6 py-3 font-medium leading-6 transition duration-150 ease-in-out cursor-pointer text-primary;
   text-transform: capitalize;
 }
 
