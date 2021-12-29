@@ -2,35 +2,35 @@ import React from 'react'
 import AmazonAccountCard from './amazon-account-card'
 const AmazonList = ({}) => {
   return (
-    <div className="w-3/4 grid-cols-3 grid-rows-3 gap-6 lg:grid">
+    <div className="grid-cols-3 grid-rows-3 gap-6 lg:grid">
       <AmazonAccountCard
         title="Your Orders"
-        subtitle="Track,return"
+        subtitle="Track,return, or buy things again"
         image="https://images-na.ssl-images-amazon.com/images/G/39/x-locale/cs/help/images/gateway/self-service/order._CB661218870_.png"
       />
       <AmazonAccountCard
-        title="Your Orders"
-        subtitle="Track,return"
+        title="Login & security"
+        subtitle="Edit login, name, mobile number"
         image="https://images-na.ssl-images-amazon.com/images/G/39/x-locale/cs/help/images/gateway/self-service/order._CB661218870_.png"
       />{' '}
       <AmazonAccountCard
-        title="Your Orders"
-        subtitle="Track,return"
+        title="Prime"
+        subtitle="View benefits and payment settings"
         image="https://images-na.ssl-images-amazon.com/images/G/39/x-locale/cs/help/images/gateway/self-service/order._CB661218870_.png"
       />{' '}
       <AmazonAccountCard
-        title="Your Orders"
-        subtitle="Track,return"
+        title="Your addresses"
+        subtitle="Edit addresses for orders"
         image="https://images-na.ssl-images-amazon.com/images/G/39/x-locale/cs/help/images/gateway/self-service/order._CB661218870_.png"
       />{' '}
       <AmazonAccountCard
-        title="Your Orders"
-        subtitle="Track,return"
+        title="Payment options"
+        subtitle="Edit or add payment methods"
         image="https://images-na.ssl-images-amazon.com/images/G/39/x-locale/cs/help/images/gateway/self-service/order._CB661218870_.png"
       />{' '}
       <AmazonAccountCard
-        title="Your Orders"
-        subtitle="Track,return"
+        title="Gift Cards"
+        subtitle="View balance or redeem a card"
         image="https://images-na.ssl-images-amazon.com/images/G/39/x-locale/cs/help/images/gateway/self-service/order._CB661218870_.png"
       />
       <div className="text-sm font-medium lg:hidden">

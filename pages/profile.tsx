@@ -24,7 +24,7 @@ export async function getStaticProps({
 export default function Profile() {
   const { data } = useCustomer()
   return (
-    <Container className="p-5 sm:ml-6">
+    <Container className="p-5 lg:px-48 sm:ml-6">
       <Text variant="pageHeading">Your Account</Text>
       {data && (
         <div>
