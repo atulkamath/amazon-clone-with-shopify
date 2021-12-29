@@ -7,9 +7,9 @@
 @tailwind utilities;
 @layer components {
   .listStart {
-    @apply p-3 border rounded-lg rounded-bl-none rounded-br-none;
+    @apply p-3 mt-1 border rounded-lg rounded-bl-none rounded-br-none;
   }
   .listEnd {
-    @apply p-3 border rounded-lg rounded-t-none;
+    @apply p-3 mb-1 border rounded-lg rounded-t-none;
   }
 }
