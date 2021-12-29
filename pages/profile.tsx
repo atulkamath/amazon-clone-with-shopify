@@ -1,8 +1,9 @@
 import type { GetStaticPropsContext } from 'next'
 import useCustomer from '@framework/customer/use-customer'
 import commerce from '@lib/api/commerce'
-import { Layout } from '@components/common'
+import { Avatar, Layout } from '@components/common'
 import { Container, Text } from '@components/ui'
+import AmazonList from '@components/amazon-list'
 
 export async function getStaticProps({
   preview,
@@ -23,22 +24,12 @@ export async function getStaticProps({
 export default function Profile() {
   const { data } = useCustomer()
   return (
-    <Container>
-      <Text variant="pageHeading">My Profile</Text>
+    <Container className="p-5 lg:px-48 sm:ml-6">
+      <Text variant="pageHeading">Your Account</Text>
       {data && (
-        <div className="grid lg:grid-cols-12">
-          <div className="lg:col-span-8 pr-4">
-            <div>
-              <Text variant="sectionHeading">Full Name</Text>
-              <span>
-                {data.firstName} {data.lastName}
-              </span>
-            </div>
-            <div className="mt-5">
-              <Text variant="sectionHeading">Email</Text>
-              <span>{data.email}</span>
-            </div>
-          </div>
+        <div>
+          {/* <h1 className="font-bold">Orders</h1> */}
+          <AmazonList />
         </div>
       )}
     </Container>
