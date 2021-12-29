@@ -28,24 +28,8 @@ export default function Profile() {
       <Text variant="pageHeading">Your Account</Text>
       {data && (
         <div>
-          <ul className="list-none last:bg-red">
-            <li className="font-bold">Orders</li>
-            <li className="p-3 border rounded-lg rounded-bl-none rounded-br-none">
-              Your Orders
-            </li>
-            <li className="p-3 border rounded-lg rounded-tl-none rounded-tr-none">
-              Subscribe & Save
-            </li>
-          </ul>
-          <ul className="list-none">
-            <li className="font-bold">Orders</li>
-            <li className="p-3 border rounded-lg rounded-r-none">
-              Your Orders
-            </li>
-            <li className="p-3 border rounded-lg rounded-r-none">
-              Subscribe & Save
-            </li>
-          </ul>
+          {/* <h1 className="font-bold">Orders</h1> */}
+          <AmazonList />
         </div>
       )}
     </Container>
