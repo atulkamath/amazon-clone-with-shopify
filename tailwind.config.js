@@ -3,16 +3,11 @@ module.exports = {
     purgeLayersByDefault: true,
     applyComplexClasses: true,
   },
-  variants: {
-    extend: {
-      listStyleType: ['odd', 'first'],
-      backgroundColor: ['odd', 'first', 'last'],
-      textColor: ['odd'],
-      ul: ['odd'],
-      listStylePosition: ['odd'],
-    },
-  },
-  purge: false,
+
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
     extend: {
       maxWidth: {

@@ -1,9 +1,5 @@
 .dropdownMenu {
-  @apply fixed right-0 z-40 w-full h-full mt-2 origin-top-right outline-none bg-primary;
-
-  @screen lg {
-    @apply absolute w-56 h-auto border shadow-lg top-10 border-accent-1;
-  }
+  @apply fixed right-0 z-40 w-full h-full mt-2 origin-top-right outline-none bg-primary lg:absolute lg:w-56 lg:h-auto lg:border lg:shadow-lg lg:top-10 lg:border-accent-1;
 }
 
 .link {

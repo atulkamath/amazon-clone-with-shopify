@@ -2,13 +2,22 @@ import React from 'react'
 
 const AmazonList = ({}) => {
   return (
-    <div className="flex flex-col ">
-      <button className="p-3 border rounded-lg rounded-bl-none rounded-br-none last:bg-black">
-        Your Orders
-      </button>
-      <button className="p-3 border rounded-lg rounded-tl-none rounded-tr-none">
-        Subscribe & Save
-      </button>
+    <div className="text-sm font-medium">
+      <h2 className="p-1 text-lg font-bold">Orders</h2>
+      <ul>
+        <li className="listStart">Your Orders</li>
+        <li className="listEnd">Subscribe & Save</li>
+      </ul>
+      <h2 className="p-1 text-lg font-bold">Account Settings</h2>
+      <ul>
+        <li className="listStart">Login & Security</li>
+        <li className="listEnd">Your Addresses</li>
+      </ul>
+      <ul>
+        <h2 className="p-1 text-lg font-bold">Amazon Wallet</h2>
+        <li className="listStart">Manage gift card balance</li>
+        <li className="listEnd">Manage payment options</li>
+      </ul>
     </div>
   )
 }

@@ -3,11 +3,11 @@
 }
 
 .button {
-  @apply h-10 px-2 rounded-md border border-accent-2 flex items-center justify-center transition-colors ease-linear;
+  @apply flex items-center justify-center h-10 px-2 transition-colors ease-linear border rounded-md border-accent-2;
 }
 
 .button:hover {
-  @apply border-accent-3 shadow-sm;
+  @apply shadow-sm border-accent-3;
 }
 
 .button:focus {
@@ -15,21 +15,15 @@
 }
 
 .dropdownMenu {
-  @apply fixed right-0 top-12 mt-2 origin-top-right outline-none bg-primary z-40 w-full h-full;
-
-  @screen lg {
-    @apply absolute border border-accent-1 shadow-lg w-56 h-auto;
-  }
+  @apply fixed right-0 z-40 w-full h-full mt-2 origin-top-right outline-none lg:absolute lg:border lg:border-accent-1 lg:shadow-lg lg:w-56 lg:h-auto top-12 bg-primary;
 }
 
 .closeButton {
-  @screen md {
-    @apply hidden;
-  }
+  @apply md:hidden;
 }
 
 .item {
-  @apply flex cursor-pointer px-6 py-3 transition ease-in-out duration-150 text-primary leading-6 font-medium items-center;
+  @apply flex items-center px-6 py-3 font-medium leading-6 transition duration-150 ease-in-out cursor-pointer text-primary;
   text-transform: capitalize;
 }
 
