@@ -55,7 +55,7 @@ const LargeCarousel = () => {
       {largeImage.map((item, index) => (
         <Link key={index} passHref href={`/search${item.link}`}>
           <div
-            className={` transform translate-x-count${firstIndex} transition duration-500`}
+            className={` translate-x-count${firstIndex} transition duration-500`}
           >
             <Image
               src={item.imgUrl}
