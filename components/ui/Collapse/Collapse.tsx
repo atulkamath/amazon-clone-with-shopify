@@ -42,5 +42,6 @@ const Collapse: FC<CollapseProps> = React.memo(({ title, children }) => {
     </div>
   )
 })
+Collapse.displayName = 'Collapse'
 
 export default Collapse
