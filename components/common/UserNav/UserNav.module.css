@@ -9,10 +9,6 @@
 .item {
   @apply relative flex items-center mr-2 transition duration-100 ease-in-out outline-none cursor-pointer lg:mr-6 text-primary;
 
-  &:hover {
-    @apply transition duration-100 scale-110 text-accent-6;
-  }
-
   &:last-child {
     @apply mr-0;
   }
