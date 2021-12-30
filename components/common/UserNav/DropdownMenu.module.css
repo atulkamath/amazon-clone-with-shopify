@@ -8,11 +8,11 @@
 }
 
 .link:hover {
-  @apply bg-accent-1;
+  @apply bg-gray-100;
 }
 
 .link.active {
-  @apply font-bold bg-accent-2;
+  @apply font-bold bg-gray-300;
 }
 
 .off {
