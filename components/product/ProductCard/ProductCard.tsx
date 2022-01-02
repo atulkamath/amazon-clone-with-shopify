@@ -71,7 +71,7 @@ const ProductCard: FC<Props> = ({
                 />
               </div>
             )}
-            <h2 className="flex flex-col w-full text-base bg-white sm:text-sm overflow-ellipsis">
+            <h2 className="flex flex-col items-center w-full text-base bg-white sm:text-sm overflow-ellipsis">
               {product.name}
             </h2>
           </>

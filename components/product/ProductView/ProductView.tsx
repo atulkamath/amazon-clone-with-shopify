@@ -78,11 +78,11 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
                 <ProductCard
                   product={p}
                   key={p.path}
-                  variant="simple"
-                  className="animated fadeIn"
+                  variant="slim"
+                  className="animated fadeIn "
                   imgProps={{
-                    width: 300,
-                    height: 300,
+                    width: 200,
+                    height: 200,
                   }}
                 />
               </div>
