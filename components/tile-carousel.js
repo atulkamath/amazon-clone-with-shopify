@@ -49,7 +49,7 @@ const TileCarousel = () => {
   const { data: customer } = useCustomer()
 
   return (
-    <div className="flex pl-2 -mt-12 space-x-4 overflow-x-scroll list-none shadow-xl cursor-pointer md:m-4 md:-mt-72 md:mb-24 bg-accent-2">
+    <div className="flex -mt-12 space-x-4 overflow-x-scroll list-none shadow-xl cursor-pointer md:m-4 md:-mt-72 md:mb-24 bg-accent-2">
       {customer ? (
         <></>
       ) : (
