@@ -18,7 +18,7 @@ const tileData = [
     link: '/clothing',
   },
   {
-    name: ' https://m.media-amazon.com/images/I/41zcgAO4k0L._SR270,360_.jpg',
+    name: 'https://m.media-amazon.com/images/I/41zcgAO4k0L._SR270,360_.jpg',
     link: '/electronics',
   },
   {
