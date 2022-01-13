@@ -17,10 +17,7 @@ const tileData = [
     name: 'https://m.media-amazon.com/images/I/51-+6nr0bDL._SR270,360_.jpg',
     link: '/clothing',
   },
-  {
-    name: ' https://m.media-amazon.com/images/I/41zcgAO4k0L._SR270,360_.jpg',
-    link: '/electronics',
-  },
+
   {
     name: 'https://m.media-amazon.com/images/I/51eiFnOS0PL._SR270,360_.jpg',
     link: '/clothing',
@@ -53,7 +50,7 @@ const TileCarousel = () => {
       {customer ? (
         <></>
       ) : (
-        <div className="z-10 flex flex-col p-3 bg-white rounded whitespace-nowrap hide-scroll-bar">
+        <div className="z-10 flex flex-col p-3 ml-4 bg-white rounded sm:ml-0 whitespace-nowrap hide-scroll-bar">
           <h1 className="text-xl font-bold">Welcome</h1>
           <h1 className="text-base">Sign in for the best experience</h1>
           <button
@@ -73,7 +70,7 @@ const TileCarousel = () => {
               src={item.name}
               width={150}
               height={200}
-              alt="error"
+              alt="tile image"
               layout="fixed"
             />
           </li>
