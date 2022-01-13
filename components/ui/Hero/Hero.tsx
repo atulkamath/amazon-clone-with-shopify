@@ -37,7 +37,7 @@ const Hero: FC<HeroProps> = () => {
 
   return (
     <div className="bg-accent-1 ">
-      <LargeCarousel />
+      {/* <LargeCarousel /> */}
       <Link passHref href={`/search${smallImage[currentIndex].link}`}>
         <div className="overflow-hidden sm:hidden">
           <Image
