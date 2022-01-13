@@ -8,6 +8,7 @@ import commerce from '@lib/api/commerce'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import LargeCarousel from '@components/large-carousel'
 
 export async function getStaticProps({
   preview,
@@ -46,6 +47,7 @@ export default function Home({
   return (
     <>
       <RoundCarousel />
+      <LargeCarousel />
       <Hero />
       <h1 className="px-4 pt-4 text-2xl border-t-4 border-gray-300 bg-accent-2">
         White Friday Deals
