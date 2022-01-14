@@ -1,6 +1,6 @@
 # Atul Kamath's Amazon Clone
 
-This is a clone I created in my spare time while working alongside my internship. It leverages the NextJs Commerce
+This is a clone I created in my spare time while working alongside my internship. It leverages NextJs Commerce
 for a complete e-commerce experience and is stylised with TailwindCSS. I opted for Shopify as a headless e-commerce SaaS.
 
 It includes:
