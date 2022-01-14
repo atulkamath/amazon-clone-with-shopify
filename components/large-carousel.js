@@ -28,46 +28,53 @@ const LargeCarousel = () => {
 
   return (
     <div className="hidden w-full overflow-x-hidden cursor-pointer sm:flex ">
-      <button
-        className="absolute z-20 items-center justify-center top-60 left-10"
-        onClick={() => {
-          setFirstIndex(firstIndex - 1)
-          if (firstIndex < -3) {
-            setFirstIndex(-1)
-          }
-          setLastIndex(lastIndex - 1)
-        }}
-      >
-        <ChevronLeftIcon className="w-24 h-16 text-white" />
-      </button>
-      <button
-        className="absolute z-20 items-center justify-center top-60 right-10"
-        onClick={() => {
-          setFirstIndex(firstIndex + 1)
-          if (firstIndex > 2) {
-            setFirstIndex(0)
-          }
-          setLastIndex(lastIndex + 1)
-        }}
-      >
-        <ChevronRightIcon className="w-24 h-16 text-white" />
-      </button>
-      {largeImage.map((item, index) => (
-        <Link key={index} passHref href={`/search${item.link}`}>
-          <div
-            className={` translate-x-count${firstIndex} transition duration-500`}
-          >
-            <Image
-              src={item.imgUrl}
-              width={1500}
-              height={600}
-              alt="error"
-              layout="fixed"
-              priority
-            />
-          </div>
-        </Link>
-      ))}
+      {firstIndex > 0 && (
+        <button
+          className="absolute z-20 items-center justify-center top-60 left-10"
+          onClick={() => {
+            setFirstIndex(firstIndex - 1)
+            setLastIndex(lastIndex - 1)
+            if (firstIndex > 3) {
+              setFirstIndex(0)
+            }
+          }}
+        >
+          <ChevronLeftIcon className="w-24 h-16 text-white" />
+        </button>
+      )}
+      {lastIndex < largeImage.length && (
+        <button
+          className="absolute z-20 items-center justify-center top-60 right-10"
+          onClick={() => {
+            setFirstIndex(firstIndex + 1)
+            setLastIndex(lastIndex + 1)
+            if (firstIndex > 3) {
+              setFirstIndex(0)
+            }
+          }}
+        >
+          <ChevronRightIcon className="w-24 h-16 text-white" />
+        </button>
+      )}
+      {largeImage.map((item, i) => {
+        if (i >= firstIndex && i < lastIndex) {
+          return (
+            <Link key={i} passHref href={`/search${item.link}`}>
+              <div className=" translate-x-count${firstIndex} transition duration-500 ">
+                <Image
+                  width={1440}
+                  height={600}
+                  src={item.imgUrl}
+                  alt="hero image"
+                  priority
+                />
+              </div>
+            </Link>
+          )
+        } else {
+          return null
+        }
+      })}
     </div>
   )
 }
